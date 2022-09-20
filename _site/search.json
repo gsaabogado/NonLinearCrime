@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "01_DataFiles.html",
+    "href": "01_DataFiles.html",
+    "title": "Data Files",
+    "section": "",
+    "text": "This page presents an overall description of the data sets I use to analyze the effect of air pollution on criminality for New York and Mexico City.\nResearchers can access the data I use to generate these files in the dropbox repository"
+  },
+  {
+    "objectID": "01_DataFiles.html#data-on-air-pollution-for-mexico-city",
+    "href": "01_DataFiles.html#data-on-air-pollution-for-mexico-city",
+    "title": "Data Files",
+    "section": "Data on air pollution for Mexico City",
+    "text": "Data on air pollution for Mexico City\nThe following code-chunk only loads into the R-environment the data files of school absences, schools’ locations, and neighborhood-level demographics I use throughout the study.\n\n\nShow the Code\n# Set the path of the R-studio project\nfile = \"~/Dropbox/DIW/NonLinearCrime/\"\n# Load the data set (I restrict it to the first observations because of data efficiency)\nCrimeNyc = read_rds(paste0(file, \"02_GenData/01_crime/CrimesNYC.rds\")) |> head(, 20)\n\n\nWe obtain data on NYC criminality from the open data-portal website of New York City. Table 1 shows the structure of the data. There are 6 observations. The data set spans between Jun 2011 and Jun 2011. It contains, the crime date, hour, longitude, and latitude, alongside a categorical variable indicating the type of crime. This variable can take the following values Other, Fraud, Forgery, and Bribery, Simple Assault\n\n\nShow the Code\n# Show the data set\nkbl(head(select(CrimeNyc, date, hour, lat, lon, crime), 3)) %>% \n  kable_classic(full_width = T, html_font = \"Cambria\") %>% \n  kable_styling(bootstrap_option = c(\"hover\")) |> \n  column_spec(c(1), italic = T, color = \"DarkBlue\") %>%\n  footnote(general = \"Sample of the criminality data for New York City. Each observation contains the date, hour, longitude, and latitude of all crimes occuring in the city between 2012 and 2018 alngside a categorical varible indicating the type of crime\", general_title = \"Notes:\", footnote_as_chunk = T)\n\n\n\n\nTable 1:  Structure of the raw file on school absences in NYC \n \n  \n    date \n    hour \n    lat \n    lon \n    crime \n  \n \n\n  \n    2011-06-18 \n    21 \n    40.72061 \n    -73.95476 \n    Other \n  \n  \n    2011-06-18 \n    21 \n    40.68931 \n    -73.81628 \n    Other \n  \n  \n    2011-06-18 \n    21 \n    40.76009 \n    -73.97503 \n    Fraud, Forgery, and Bribery \n  \n\n\nNotes:  Sample of the criminality data for New York City. Each observation contains the date, hour, longitude, and latitude of all crimes occuring in the city between 2012 and 2018 alngside a categorical varible indicating the type of crime"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NonLinearCrime",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]

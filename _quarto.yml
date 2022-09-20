@@ -27,9 +27,7 @@ website:
       - section: "Sections"
         contents:
         - about.qmd
-        - 01_data.qmd
-        - 02_DescStatistics.qmd
-        - 03_regressions.qmd
+        - 01_DataFiles.qmd
 
 format:
   html:

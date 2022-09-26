@@ -1,7 +1,7 @@
 ---
 title: ""
 description: |
-  This website contains all the data and R-code necessary to replicate the results of the study: The Nonlinear Relationship Between Pollution and Crime: Evidence from Mexico City and NewYork forthcomming in Environmental Resarch - Health.
+  This website contains all the data and R-code necessary to replicate the results of the study: \\ The Nonlinear Relationship Between Pollution and Crime: Evidence from Mexico City and New York forthcomming in Environmental Resarch - Health.
 author: "Luis Sarmiento"
 institute: "RFF-CMCC: European Institute on Economics and the Environment"
 date: "`r format(Sys.time(), '%d %B, %Y')`" 
@@ -20,7 +20,7 @@ This research report contains three primary sections to accompany the study on t
 -   The Now-Cast AQI
 :::
 
-2.  ***Descriptive Statistics*** -- contains descriptive statitistics on crime, air pollution, and weather controls. I also divide this section in four sub-sections.
+2.  ***Descriptive Statistics*** -- contains descriptive statistics on crime, air pollution, and weather controls. I also divide this section in four sub-sections.
 
 3.  **Study Results --** Includes the R code and data necessary to replicate all the figures and tables in the study
 
@@ -38,15 +38,19 @@ Download all files in the [dropbox repository](https://www.dropbox.com/sh/9oyfzo
 
     -   *01_crimes* - It is the repository with all the raw data on criminality for Mexico City and New York. It contains two sub-directories. **01_nyc** has all the crime data of New York City (in CSV and Excel formats) and **03_cdmx** has the analogous data from Mexico divided into two different CSV files (one between 2012 and 2015 and the other between 2016 and 2019).
 
-    -   *02_pollution* - Repository with all the air pollution data for New York and Mexico City. It contains two sub-directories. ***01_epa*** contains the air pollution data from the network of monitoring stations maintained by the Environmental protection agency. The folder contains two additional folders, **02_daily** contains zipped daily measurement files for each air pollutant and year between 2000 and 2019 and **02_StateData** has a zipped file of hourly air pollution for each US state. Next, ***03_cdmx*** contains the air pollution data for Mexico City spread across three repositories; **01_pol** has a set of csv files with hourly air pollution data. **02_weather** has a similar structure for weather controls. And **03_other** contains a folder with the geographical location of measuring staions
 
-    -   03\_ shapefiles -- Folder with all the shape (spatial) files I use throughout the study
+    -   *02_pollution* - Repository with all the air pollution data for New York and Mexico City. It contains two sub-directories. ***01_epa*** contains the air pollution data from the network of monitoring stations maintained by the US Environmental Protection Agency. This folder (**01_epa**) contains two additional folders, **02_daily** contains zipped daily measurement files for each air pollutant and year between 2000 and 2019 for the entire USA and **02_StateData** has a zipped file of hourly air pollution for each US state. Next, ***03_cdmx*** contains the air pollution data for Mexico City spread across three repositories; **01_pol** has a set of csv files with hourly air pollution data. **02_weather** has a similar structure for weather controls. And **03_other** contains a folder with the geographical location of measuring staions
+
+    -   03_shapefiles -- Folder with all the shape (spatial) files I use throughout the study
 
     -   04_weather - Folder with the weather data for New York City
 
 -   **02_GenData** -- Contains the set of data.frames I use for the estimation of point estimates. Each data comes from the scientific manipulation of the raw files in the 01_RawFiles repository.
 
-    -   01_crime: the folder contains three main files: crimes.rds, CrimesCdmx.rds, and CrimesNYC.rds corresponding to data frames of crime observations for the full sample, Mexico City, and New York, respectively
+    -   01_crime: the folder contains three main files: 
+        -  **CrimesCdmx.rds**: Crime data for Mexico City
+        -  **CrimesNYC.rds**: Crime data for New York City
+        -  **crimes.rds**: Crime data for Mexico City and New York
 
     -   02_pol: The folder contain N main files
 

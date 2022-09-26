@@ -16,69 +16,6 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -190,7 +127,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  <a href="./about.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_DataFiles.html" class="sidebar-item-text sidebar-link active">Data Sets</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_exhibits.html" class="sidebar-item-text sidebar-link">Study Exhibits</a>
   </div>
 </li>
       </ul>
@@ -204,12 +151,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#crime-data-for-new-york-city" id="toc-crime-data-for-new-york-city" class="nav-link active" data-scroll-target="#crime-data-for-new-york-city">Crime data for New York City</a></li>
-  <li><a href="#crime-data-for-mexico-city" id="toc-crime-data-for-mexico-city" class="nav-link" data-scroll-target="#crime-data-for-mexico-city">Crime data for Mexico City</a></li>
-  <li><a href="#hourly-air-pollution-data-for-mexico-city" id="toc-hourly-air-pollution-data-for-mexico-city" class="nav-link" data-scroll-target="#hourly-air-pollution-data-for-mexico-city">Hourly air pollution data for Mexico City</a></li>
-  <li><a href="#hourly-air-pollution-data-for-new-york-city" id="toc-hourly-air-pollution-data-for-new-york-city" class="nav-link" data-scroll-target="#hourly-air-pollution-data-for-new-york-city">Hourly air pollution data for New York City</a></li>
-  <li><a href="#adding-values-to-missing-observations-with-inverse-distance-weighting" id="toc-adding-values-to-missing-observations-with-inverse-distance-weighting" class="nav-link" data-scroll-target="#adding-values-to-missing-observations-with-inverse-distance-weighting">Adding values to missing observations with Inverse Distance Weighting</a></li>
-  <li><a href="#computing-the-nowcast-air-quality-index" id="toc-computing-the-nowcast-air-quality-index" class="nav-link" data-scroll-target="#computing-the-nowcast-air-quality-index">Computing the NowCast Air Quality Index</a></li>
+  <li><a href="#crime" id="toc-crime" class="nav-link active" data-scroll-target="#crime">Crime</a>
+  <ul class="collapse">
+  <li><a href="#new-york-city" id="toc-new-york-city" class="nav-link" data-scroll-target="#new-york-city">New York City</a></li>
+  <li><a href="#mexico-city" id="toc-mexico-city" class="nav-link" data-scroll-target="#mexico-city">Mexico City</a></li>
+  </ul></li>
+  <li><a href="#air-polltuion" id="toc-air-polltuion" class="nav-link" data-scroll-target="#air-polltuion">Air Polltuion</a>
+  <ul class="collapse">
+  <li><a href="#mexico-city-1" id="toc-mexico-city-1" class="nav-link" data-scroll-target="#mexico-city-1">Mexico City</a></li>
+  <li><a href="#new-york-city-1" id="toc-new-york-city-1" class="nav-link" data-scroll-target="#new-york-city-1">New York City</a></li>
+  <li><a href="#inverse-distance-weighting" id="toc-inverse-distance-weighting" class="nav-link" data-scroll-target="#inverse-distance-weighting">Inverse Distance Weighting</a></li>
+  <li><a href="#the-nowcast-air-quality-index" id="toc-the-nowcast-air-quality-index" class="nav-link" data-scroll-target="#the-nowcast-air-quality-index">The NowCast Air Quality Index</a></li>
+  </ul></li>
+  <li><a href="#regression-data" id="toc-regression-data" class="nav-link" data-scroll-target="#regression-data">Regression data</a></li>
   </ul>
 </nav>
     </div>
@@ -240,29 +194,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p>This page presents an overall description of the data sets I use to analyze the effect of air pollution on criminality for New York and Mexico City.</p>
 <p>Researchers can access the data I use to generate these files in the <a href="https://www.dropbox.com/sh/1jyjs84sef7t1nt/AABtbantKPm4OyICNEIklpXLa?dl=0">dropbox repository</a></p>
-<section id="crime-data-for-new-york-city" class="level2">
-<h2 class="anchored" data-anchor-id="crime-data-for-new-york-city">Crime data for New York City</h2>
-<p>The following code-chunk loads into the R-environment the raw crime data for NYC</p>
+<section id="crime" class="level1">
+<h1>Crime</h1>
+<section id="new-york-city" class="level2">
+<h2 class="anchored" data-anchor-id="new-york-city">New York City</h2>
 <div class="cell">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the path of the R-studio project</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>file <span class="ot">=</span> <span class="st">"~/Dropbox/DIW/NonLinearCrime/"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data set (I restrict it to the first observations because of data efficiency)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>CrimeNyc <span class="ot">=</span> <span class="fu">read_rds</span>(<span class="fu">paste0</span>(file, <span class="st">"02_GenData/01_crime/CrimesNYC.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+
 </div>
-<p>We obtain data on NYC criminality from the open data-portal website of New York City. <a href="#tbl-CrimesNyc">Table&nbsp;1</a> shows the structure of the data. There are 5,995,453 observations. The data set spans from Jan 2006 to Dec 2017. It contains, the crime date, hour, longitude, and latitude, alongside a categorical variable indicating the type of crime. This variable can take the following values: Assault, Burglary, Fraud, Forgery, and Bribery, Larceny, Liberty crimes, Mansloughter, Other, Rape, Robbery, Sex crime, Simple Assault.</p>
+<p>We obtain data on NYC criminality from the open data-portal website of New York City. I transform the raw data into a panel format with the first code-chunk of the script 03_scripts/01_crime in the dropbox folder. <a href="#tbl-CrimesNyc">Table&nbsp;1</a> shows the structure of the data. There are 5,995,453 observations. The data set spans from Jan 2006 to Dec 2017. It contains, the crime date, hour, longitude, and latitude, alongside a categorical variable indicating the type of crime. This variable can take the following values: Assault, Burglary, Fraud, Forgery, and Bribery, Larceny, Liberty crimes, Mansloughter, Other, Rape, Robbery, Sex crime, Simple Assault.</p>
 <div class="cell tbl-cap-location-top">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the data set</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(<span class="fu">head</span>(<span class="fu">select</span>(CrimeNyc, date, hour, lat, lon, crime), <span class="dv">3</span>), <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> T, <span class="at">html_font =</span> <span class="st">"Cambria"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_option =</span> <span class="fu">c</span>(<span class="st">"hover"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">1</span>), <span class="at">italic =</span> T, <span class="at">color =</span> <span class="st">"DarkBlue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">"Sample of the criminality data for New York City. Each observation contains the date, hour, longitude, and latitude of all crimes occuring in the city between 2012 and 2018 alngside a categorical varible indicating the type of crime"</span>, <span class="at">general_title =</span> <span class="st">"Notes:"</span>, <span class="at">footnote_as_chunk =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div id="tbl-CrimesNyc" class="anchored">
 
@@ -305,30 +245,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take away tge data set</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(CrimeNyc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
-<section id="crime-data-for-mexico-city" class="level2">
-<h2 class="anchored" data-anchor-id="crime-data-for-mexico-city">Crime data for Mexico City</h2>
-<p>The following code-chunk loads into the R-environment the crime data for Mexico City</p>
+<section id="mexico-city" class="level2">
+<h2 class="anchored" data-anchor-id="mexico-city">Mexico City</h2>
 <div class="cell">
 
 </div>
-<p>The data set for Mexico City spans comes from the open-data portal of the Mexico City Government for the years between 2016 and 2019 and from citizen requests from the observations between 2012 and 2015. <a href="#tbl-CrimesCdmx">Table&nbsp;2</a> shows the structure of the data. There are 1,563,833 observations. The data set spans from Jan 2012 to Dec 2019. It contains, the crime date, hour, longitude, and latitude, alongside a categorical variable indicating the type of crime. This variable can take the following values: Assault, Burglary, Fraud, Forgery, and Bribery, Homicide, Larceny, Liberty crimes, Mansloughter, Other, Rape, Robbery, Sex crime, Simple Assault.</p>
+<p>The data set for Mexico City comes from the open-data portal of the Mexico City Government for the years between 2016 and 2019 and from citizen requests from the observations between 2012 and 2015. <a href="#tbl-CrimesCdmx">Table&nbsp;2</a> shows the structure of the data. There are 1,563,833 observations. The data set spans from Jan 2012 to Dec 2019. It contains, the crime date, hour, longitude, and latitude, alongside a categorical variable indicating the type of crime. This variable can take the following values: Assault, Burglary, Fraud, Forgery, and Bribery, Homicide, Larceny, Liberty crimes, Mansloughter, Other, Rape, Robbery, Sex crime, Simple Assault.</p>
 <div class="cell tbl-cap-location-top">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the data set</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(<span class="fu">head</span>(<span class="fu">select</span>(CrimeCdmx, date, hour, lat, lon, crime), <span class="dv">3</span>), <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> T, <span class="at">html_font =</span> <span class="st">"Cambria"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_option =</span> <span class="fu">c</span>(<span class="st">"hover"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">1</span>), <span class="at">italic =</span> T, <span class="at">color =</span> <span class="st">"DarkBlue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">"Sample of the criminality data for New York City. Each observation contains the date, hour, longitude, and latitude of all crimes occuring in the city between 2012 and 2018 alngside a categorical varible indicating the type of crime"</span>, <span class="at">general_title =</span> <span class="st">"Notes:"</span>, <span class="at">footnote_as_chunk =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div id="tbl-CrimesCdmx" class="anchored">
 
@@ -371,35 +296,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take away the data set</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(CrimeCdmx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
-<section id="hourly-air-pollution-data-for-mexico-city" class="level2">
-<h2 class="anchored" data-anchor-id="hourly-air-pollution-data-for-mexico-city">Hourly air pollution data for Mexico City</h2>
-<p>We obtain the hourly data on pollution for Mexico City from the Atmospheric Information Center of the city.</p>
+</section>
+<section id="air-polltuion" class="level1">
+<h1>Air Polltuion</h1>
+<section id="mexico-city-1" class="level2">
+<h2 class="anchored" data-anchor-id="mexico-city-1">Mexico City</h2>
 <div class="cell">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>PolCdmx <span class="ot">=</span> <span class="fu">read_rds</span>(<span class="fu">paste0</span>(file, <span class="st">"02_GenData/02_pol/RawPolCdmx.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+
 </div>
-<p>The data contains station-level measurements of the key criteria pollutants and weather covariates. In total, it contains 2,673,312 hourly observations divided across 47 measuring stations spanning from Jan 2010 to Dec 2019. <a href="#tbl-PolCdmx">Table&nbsp;3</a> portrays s sample of the panel with one observation for each station, date, and hour combinations. The file reports the longitude and latitude of the station alongside the concentrations of ozone (o3), fine particulate matter(pm25), coarse particulate matter (pm10), relative humidity (rh), temperature (temp), wind speed (wsp), and wind direction (wdr)</p>
+<p>I obtain the hourly data on pollution for Mexico City from the Atmospheric Information Center of the city. The data contains station-level measurements of the key criteria pollutants and weather covariates. In total, it contains 2,673,312 hourly observations divided across 47 measuring stations spanning from Jan 2010 to Dec 2019. <a href="#tbl-PolCdmx">Table&nbsp;3</a> portrays s sample of the panel with one observation for each station, date, and hour combinations. The file reports the longitude and latitude of the station alongside the concentrations of ozone (o3), fine particulate matter(pm25), coarse particulate matter (pm10), relative humidity (rh), temperature (temp), wind speed (wsp), and wind direction (wdr)</p>
 <div class="cell tbl-cap-location-top">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the data set</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(PolCdmx <span class="sc">|&gt;</span> <span class="fu">arrange</span>(station, date, hour) <span class="sc">|&gt;</span>  </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span>(<span class="fu">c</span>(station, date, hour, lat, lon, o3, pm25, pm10, rh<span class="sc">:</span>wdr)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">head</span>(., <span class="dv">5</span>), <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> T, <span class="at">html_font =</span> <span class="st">"Cambria"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_option =</span> <span class="fu">c</span>(<span class="st">"hover"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">1</span>), <span class="at">italic =</span> T, <span class="at">color =</span> <span class="st">"DarkBlue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">"Sample of the air pollution data for Mexico City. Each observation contains the station id ant the date and hour time stamps. It also includes the geo-location of measuring stations and the measures of ozone (o3), fine particulate matter (pm25), coarse particulate matter (pm10), relative humidity (rh), temperature (temp), wind speed (wsp), and wind direction(wdr). Ozone in particles per billion, particulate matters in micrograms per cubic metter, relative humidity in percentage, temperature in celsius, wind speed in knots, and wind direction in meteorological degrees"</span>, <span class="at">general_title =</span> <span class="st">"Notes:"</span>, <span class="at">footnote_as_chunk =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div id="tbl-PolCdmx" class="anchored">
 
@@ -498,35 +406,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take away the data</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(PolCdmx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
-<section id="hourly-air-pollution-data-for-new-york-city" class="level2">
-<h2 class="anchored" data-anchor-id="hourly-air-pollution-data-for-new-york-city">Hourly air pollution data for New York City</h2>
-<p>I obtain the hourly pollution data for New York City from the EPA pre-generated data-files.</p>
+<section id="new-york-city-1" class="level2">
+<h2 class="anchored" data-anchor-id="new-york-city-1">New York City</h2>
 <div class="cell">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>PolNyc <span class="ot">=</span> <span class="fu">read_rds</span>(<span class="fu">paste0</span>(file, <span class="st">"02_GenData/02_pol/PolWeatherNYC.rds"</span>)) <span class="sc">|&gt;</span> <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+
 </div>
-<p>The data is structured in a pannel format with one observations per station and date-hour combinations. It covers the period from Jan 2000 to Dec 2019 and contains 8,528,826 hourly observations divided across 96 measuring stations. <a href="#tbl-PolNyc">Table&nbsp;4</a> portrays a sample of the panel whose variables are analogous to <a href="#tbl-PolCdmx">Table&nbsp;3</a>.</p>
+<p>I obtain the hourly pollution data for New York City from the EPA pre-generated data-files. The data is structured in a panel format with one observations per station and date-hour combinations. It covers the period from Jan 2000 to Dec 2019 and contains 8,528,826 hourly observations divided across 96 measuring stations. <a href="#tbl-PolNyc">Table&nbsp;4</a> portrays a sample of the panel whose variables are analogous to <a href="#tbl-PolCdmx">Table&nbsp;3</a>.</p>
 <div class="cell tbl-cap-location-top">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the data set</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(PolNyc <span class="sc">|&gt;</span> <span class="fu">arrange</span>(station, date, hour) <span class="sc">|&gt;</span>  </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span>(<span class="fu">c</span>(station, date, hour, lat, lon, o3, pm25, pm10, rh<span class="sc">:</span>wdr)) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">head</span>(., <span class="dv">5</span>), <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> T, <span class="at">html_font =</span> <span class="st">"Cambria"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_option =</span> <span class="fu">c</span>(<span class="st">"hover"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">1</span>), <span class="at">italic =</span> T, <span class="at">color =</span> <span class="st">"DarkBlue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">"Sample of the air pollution data for New York City. Each observation contains the station id ant the date and hour time stamps. It also includes the geo-location of measuring stations and the measures of ozone (o3), fine particulate matter (pm25), coarse particulate matter (pm10), relative humidity (rh), temperature (temp), wind speed (wsp), and wind direction(wdr). Ozone in particles per billion, particulate matters in micrograms per cubic metter, relative humidity in percentage, temperature in celsius, wind speed in knots, and wind direction in meteorological degrees"</span>, <span class="at">general_title =</span> <span class="st">"Notes:"</span>, <span class="at">footnote_as_chunk =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div id="tbl-PolNyc" class="anchored">
 
@@ -625,98 +513,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Take away the data</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(PolNyc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 </section>
-<section id="adding-values-to-missing-observations-with-inverse-distance-weighting" class="level2">
-<h2 class="anchored" data-anchor-id="adding-values-to-missing-observations-with-inverse-distance-weighting">Adding values to missing observations with Inverse Distance Weighting</h2>
-<p>Once I download and clean the hourly pollution data, I fill NAs of stations not measuring specific contaminants with inverse distance weighting. IDW approximates the value of a point in space by weighting the measures of comparable neighbours. The following equation shows the mathematical formula behind the weighting.</p>
+<section id="inverse-distance-weighting" class="level2">
+<h2 class="anchored" data-anchor-id="inverse-distance-weighting">Inverse Distance Weighting</h2>
+<p>Once I download and clean the hourly pollution data for Mexico City and New York, I fill the missing values of stations not measuring specific contaminants with inverse distance weighting. IDW approximates the value of a point in space by weighting the measures of comparable neighbours. The following equation shows the mathematical formula behind the weighting.</p>
 <p><span class="math display">\[
 \frac{\sum_{i}^{N}\omega(dist_{ij})*pol_{it}}{\sum_{i}^{N}\omega(dist_{ij})} \quad | \quad pol_{it} \rightarrow dist_{ij} = 0 \quad | \quad \Longrightarrow \omega(dist_{ij}) = \frac{1}{distance(x_{i}, x_{j})^p}
 \]</span></p>
 <p>In it, <span class="math inline">\(V_{jt}\)</span> is the weighted value at station <span class="math inline">\(j\)</span> at time <span class="math inline">\(t\)</span>, <span class="math inline">\(pol_{it}\)</span> is the value of pollution (or weather) at station~<span class="math inline">\(i\)</span> at time~<span class="math inline">\(t\)</span>, <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_j\)</span> the geographical coordinates of station <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, and~<span class="math inline">\(dist_{ij}\)</span> is the distance between stations. The power factor <span class="math inline">\(p\)</span> modifies the weighting load; the greater <span class="math inline">\(p\)</span>, the greater the weight of closer stations. We use a weight of two, as recommended by for air pollution. Furthermore, we cut off stations farther away than twenty kilometres to focus on local variations.</p>
-<div class="cell">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>PolIdw <span class="ot">=</span> <span class="fu">read_rds</span>(<span class="fu">paste0</span>(file, <span class="st">"02_GenData/02_pol/idw.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p><a href="#tbl-PolIdw">Table&nbsp;5</a> shows a sample of the inverse distance weighted data-file.</p>
-<div class="cell tbl-cap-location-top">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the data set</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(PolIdw <span class="sc">|&gt;</span> <span class="fu">arrange</span>(station, date, hour) <span class="sc">|&gt;</span>  </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span>(<span class="fu">c</span>(station, date, hour, o3IDW, pm25IDW, pm10IDW)) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tail</span>(., <span class="dv">3</span>), <span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> T, <span class="at">html_font =</span> <span class="st">"Cambria"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_option =</span> <span class="fu">c</span>(<span class="st">"hover"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">1</span>), <span class="at">italic =</span> T, <span class="at">color =</span> <span class="st">"DarkBlue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">"Sample of the air pollution data for Mexico City and New York. Each observation contains the station id, date, hour, and inverse distance weighted values of ozone (o3), fine particulate matter (pm25), and coarse particulate matter (pm10). Ozone in particles per billion and particulate matters in micrograms per cubic metter"</span>, <span class="at">general_title =</span> <span class="st">"Notes:"</span>, <span class="at">footnote_as_chunk =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div id="tbl-PolIdw" class="anchored">
-
-<table class=" lightable-classic table table-hover" style="font-family: Cambria; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;border-bottom: 0;"><caption>Table 5:  Structure of the New York City pollution data </caption>
- <thead>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:left;"> station </th>
-   <th style="text-align:left;"> date </th>
-   <th style="text-align:right;"> hour </th>
-   <th style="text-align:right;"> o3IDW </th>
-   <th style="text-align:right;"> pm25IDW </th>
-   <th style="text-align:right;"> pm10IDW </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;font-style: italic;color: DarkBlue !important;"> 12571198 </td>
-   <td style="text-align:left;"> XAL </td>
-   <td style="text-align:left;"> 2019-12-31 </td>
-   <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 18.80 </td>
-   <td style="text-align:right;"> 46.04 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-style: italic;color: DarkBlue !important;"> 12571199 </td>
-   <td style="text-align:left;"> XAL </td>
-   <td style="text-align:left;"> 2019-12-31 </td>
-   <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 19.89 </td>
-   <td style="text-align:right;"> 59.07 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-style: italic;color: DarkBlue !important;"> 12571200 </td>
-   <td style="text-align:left;"> XAL </td>
-   <td style="text-align:left;"> 2019-12-31 </td>
-   <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 22.87 </td>
-   <td style="text-align:right;"> 56.10 </td>
-  </tr>
-</tbody>
-<tfoot><tr><td style="padding: 0; " colspan="100%">
-<span style="font-style: italic;">Notes:</span> <sup></sup> Sample of the air pollution data for Mexico City and New York. Each observation contains the station id, date, hour, and inverse distance weighted values of ozone (o3), fine particulate matter (pm25), and coarse particulate matter (pm10). Ozone in particles per billion and particulate matters in micrograms per cubic metter</td></tr></tfoot>
-</table>
-
-</div>
-</div>
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Erase the data</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(PolIdw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 </section>
-<section id="computing-the-nowcast-air-quality-index" class="level2">
-<h2 class="anchored" data-anchor-id="computing-the-nowcast-air-quality-index">Computing the NowCast Air Quality Index</h2>
+<section id="the-nowcast-air-quality-index" class="level2">
+<h2 class="anchored" data-anchor-id="the-nowcast-air-quality-index">The NowCast Air Quality Index</h2>
 <p>To obtain a single estimate on the effect of pollution on criminality, I transform the hourly concentration of ozone, coarse particle matter, and fine particulate matter into the now Cast Air Quality Index (NC-AQI). The NC-AQI is an hourly version of the standard air quality index used by the EPA since 1976 to communicate the health consequences of exacerbated air pollution. The idea behind the AQI is to transform the concentration of the main criteria pollutants into an easy-to-understand index value that runs between zero and five hundred units. The NC-AQI is different from the standard AQI because the latter is unsuitable when analysing hourly data as it is only valid in a 24 hours period. The idea of the NC-AQI is to better represent the hourly risks of exposure by weighing nearby hours more heavily than the simple running average used with the standard AQIs. For this, before transforming pollutant concentrations into the AQI, the algorithm transforms the hourly values of of ozone and paticle matters according to equation <a href="#eq-nc">Equation&nbsp;1</a>.</p>
 <p><span id="eq-nc"><span class="math display">\[
   NowCast^i_{st}= \frac{\sum_{t = 1}^{T} w^{t-1} c^i_t}{\sum_{t = 1}^{T} w^{t-1}} \hspace{0.15cm} and  \hspace{0.15cm} w^* = \frac{c_{min}}{c_{max}}
@@ -726,113 +534,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 AQI^i_{st}= \frac{[NowCast^{i}_{st} - NowCast^{i,min}] - [Aqi^{i, max} - Aqi^{i,min}]}{NowCast^{max} - NowCast^{min}} + Aqi^{min}  
 \tag{2}\]</span></span></p>
 <p>In it, NowCast<span class="math inline">\(^{i}_{st}\)</span> is the transformed exposure value of pollutant <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span> in station <span class="math inline">\(s\)</span>. NowCast<span class="math inline">\(^{i,min}\)</span> and NowCast<span class="math inline">\(^{i,max}\)</span> are the minimum and maximum break values of pollutant <span class="math inline">\(i\)</span> corresponding to each of the five risk categories in which the EPA divides the AQI. Similarly, AQI<span class="math inline">\(_{min}\)</span> and AQI<span class="math inline">\(_{max}\)</span> are the minimum and maximum AQI threshold values for each of these five categories.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> At each point in time, the AQI in station <span class="math inline">\(s\)</span> at time <span class="math inline">\(t\)</span> is the highest across all measured contaminants in that station, i.e., <span class="math inline">\(AQI_{st} = max(AQI^i_{st})\)</span>.</p>
-<div class="cell">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>PolNc <span class="ot">=</span> <span class="fu">read_rds</span>(<span class="fu">paste0</span>(file, <span class="st">"02_GenData/02_pol/PolNowCast.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p><a href="#tbl-PolNc">Table&nbsp;6</a> contains a sample of the final data set for air pollution. As with <span class="citation" data-cites="tab-PolNyc">@tab-PolNyc</span> and <span class="citation" data-cites="tab-PolCdmx">@tab-PolCdmx</span>, each observation corresponds to a station-date-hour combination. The data contains weather covariates alongside the value of the NowCast AQI, <span class="math inline">\(o_3\)</span>, <span class="math inline">\(pm_{10}\)</span>, and <span class="math inline">\(pm_{25}\)</span> (as well as their weighted values).</p>
-<div class="cell tbl-cap-location-top">
-<details>
-<summary>Show the Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the data set</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="fu">ungroup</span>(PolNc), <span class="fu">is.na</span>(NowCast) <span class="sc">==</span> F) <span class="sc">|&gt;</span> <span class="fu">arrange</span>(city, station, date, hour)  <span class="sc">|&gt;</span> </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">select</span>(<span class="fu">c</span>(city, station, date, hour, NowCast, o3<span class="sc">:</span>pm25, o3IDW<span class="sc">:</span>pm25IDW, rh<span class="sc">:</span>wdr, rain)) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">head</span>(., <span class="dv">3</span>), <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">row.names =</span> F) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> T, <span class="at">html_font =</span> <span class="st">"Cambria"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_option =</span> <span class="fu">c</span>(<span class="st">"hover"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="fu">c</span>(<span class="dv">1</span>), <span class="at">italic =</span> T, <span class="at">color =</span> <span class="st">"DarkBlue"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">"Sample of the air pollution data for Mexico City and New York. Each observation contains the station id, date, hour, and raw plus inverse distance weighted values of ozone (o3), fine particulate matter (pm25), and coarse particulate matter (pm10). Ozone in particles per billion and particulate matters in micrograms per cubic metter"</span>, <span class="at">general_title =</span> <span class="st">"Notes:"</span>, <span class="at">footnote_as_chunk =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div id="tbl-PolNc" class="anchored">
-
-<table class=" lightable-classic table table-hover" style="font-family: Cambria; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;border-bottom: 0;"><caption>Table 6:  Structure of the New York City pollution data </caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> city </th>
-   <th style="text-align:left;"> station </th>
-   <th style="text-align:left;"> date </th>
-   <th style="text-align:right;"> hour </th>
-   <th style="text-align:right;"> NowCast </th>
-   <th style="text-align:right;"> o3 </th>
-   <th style="text-align:right;"> pm10 </th>
-   <th style="text-align:right;"> pm25 </th>
-   <th style="text-align:right;"> o3IDW </th>
-   <th style="text-align:right;"> pm10IDW </th>
-   <th style="text-align:right;"> pm25IDW </th>
-   <th style="text-align:right;"> rh </th>
-   <th style="text-align:right;"> temp </th>
-   <th style="text-align:right;"> wsp </th>
-   <th style="text-align:right;"> wdr </th>
-   <th style="text-align:right;"> rain </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;font-style: italic;color: DarkBlue !important;"> cdmx </td>
-   <td style="text-align:left;"> ACO </td>
-   <td style="text-align:left;"> 2010-01-01 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 124 </td>
-   <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> 62 </td>
-   <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 151.9 </td>
-   <td style="text-align:right;"> 62 </td>
-   <td style="text-align:right;"> 56.6 </td>
-   <td style="text-align:right;"> 14.5 </td>
-   <td style="text-align:right;"> 1.2 </td>
-   <td style="text-align:right;"> 357 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-style: italic;color: DarkBlue !important;"> cdmx </td>
-   <td style="text-align:left;"> ACO </td>
-   <td style="text-align:left;"> 2010-01-01 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 154 </td>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> 75 </td>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:right;"> 186.2 </td>
-   <td style="text-align:right;"> 75 </td>
-   <td style="text-align:right;"> 57.8 </td>
-   <td style="text-align:right;"> 14.1 </td>
-   <td style="text-align:right;"> 1.7 </td>
-   <td style="text-align:right;"> 348 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-style: italic;color: DarkBlue !important;"> cdmx </td>
-   <td style="text-align:left;"> ACO </td>
-   <td style="text-align:left;"> 2010-01-01 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 152 </td>
-   <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> 54 </td>
-   <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 135.4 </td>
-   <td style="text-align:right;"> 54 </td>
-   <td style="text-align:right;"> 54.4 </td>
-   <td style="text-align:right;"> 14.0 </td>
-   <td style="text-align:right;"> 3.0 </td>
-   <td style="text-align:right;"> 332 </td>
-   <td style="text-align:right;"> 0 </td>
-  </tr>
-</tbody>
-<tfoot><tr><td style="padding: 0; " colspan="100%">
-<span style="font-style: italic;">Notes:</span> <sup></sup> Sample of the air pollution data for Mexico City and New York. Each observation contains the station id, date, hour, and raw plus inverse distance weighted values of ozone (o3), fine particulate matter (pm25), and coarse particulate matter (pm10). Ozone in particles per billion and particulate matters in micrograms per cubic metter</td></tr></tfoot>
-</table>
-
-</div>
-</div>
-</div>
+</section>
+</section>
+<section id="regression-data" class="level1">
+<h1>Regression data</h1>
+<p>I construct the final data set by adding the number of hourly crimes happening in a two-kilometer radius around each measuring station. In cases when a crime falls within the catchment area of two different stations, I assign the crime to the closest one. However, results are robust to double counting and different catchment radii. The final data set is a panel of 2.9 million hourly observations. Each observation contains the number of crimes occurring around each measuring station at time <span class="math inline">\(t\)</span> alongside recorded pollution values and weather covariates.</p>
+<p>Table X shows a sample of the final data set we use to estimate the effect of air pollution on the number of crimes around measuring stations in Mexico City and New York.</p>
 
 
 </section>

@@ -2,8 +2,9 @@ project:
   type: website
   output-dir: docs
   render:
-    #- about.qmd
-    - 01_dataFiles.qmd
+    - about.qmd
+    - 01_DataFiles.qmd
+    - 02_exhibits.qmd
 
 website:
   title: "The Nonlinear Relationship Between Pollution and Crime"
@@ -12,8 +13,8 @@ website:
     pinned: true
     collapse: true
     right:
-     # - text: Home
-     #   href: about.qmd 
+      - text: Home
+        href: about.qmd 
       - icon: github
         href: https://github.com/gsaabogado
       - icon: twitter
@@ -26,8 +27,9 @@ website:
     contents:
       - section: "Sections"
         contents:
-        #- about.qmd
+        - about.qmd
         - 01_DataFiles.qmd
+        - 02_exhibits.qmd
 
 format:
   html:

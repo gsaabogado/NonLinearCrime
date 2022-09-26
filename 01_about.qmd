@@ -7,7 +7,7 @@ institute: "RFF-CMCC: European Institute on Economics and the Environment"
 date: "`r format(Sys.time(), '%d %B, %Y')`" 
 ---
 
-# Introduction
+## Introduction
 
 This research report contains three primary sections to accompany the study on the relationship between air pollution exposure and criminal behaviour in Mexico City and New York.
 

@@ -14,7 +14,7 @@ website:
     collapse: true
     right:
       - text: Home
-        href: about.qmd 
+        href: about.qmd
       - icon: github
         href: https://github.com/gsaabogado
       - icon: twitter
@@ -35,7 +35,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    toc: true
+    toc: false
 
 
 

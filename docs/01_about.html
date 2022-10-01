@@ -154,7 +154,8 @@ ul.task-list{list-style: none;}
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This research report contains three primary sections to accompany the study on the relationship between air pollution exposure and criminal behaviour in Mexico City and New York.</p>
 <ol type="1">
-<li><strong><em>Data Sets</em></strong> Includes a description of all the data files we use throughout the study. It is divided into five sub-sections</li>
+<li><p><strong>Introduction</strong> – Contains the instructions to replicate the data-sets and results of the study</p></li>
+<li><p><strong><em>Data Sets</em></strong> – Includes a description of all the data files we use throughout the study. It is divided into five sub-sections</p></li>
 </ol>
 <div class="incremental">
 <ul class="incremental">
@@ -162,47 +163,52 @@ ul.task-list{list-style: none;}
 <li>Air pollution data</li>
 <li>Inverse distance weighting</li>
 <li>The Now-Cast AQI</li>
+<li>Regression Data</li>
 </ul>
 </div>
-<ol start="2" type="1">
-<li><p><strong><em>Descriptive Statistics</em></strong> – contains descriptive statistics on crime, air pollution, and weather controls. I also divide this section in four sub-sections.</p></li>
-<li><p><strong>Study Results –</strong> Includes the R code and data necessary to replicate all the figures and tables in the study</p></li>
+<ol start="3" type="1">
+<li><strong>Study Exhibits</strong> – Includes the R code and data necessary to replicate all the figures and tables in the study</li>
 </ol>
 </section>
-<section id="replication" class="level1">
-<h1>Replication</h1>
+<section id="replication" class="level2">
+<h2 class="anchored" data-anchor-id="replication">Replication</h2>
 <p>All the raw files needed to run the code are in the <a href="https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0">dropbox repository</a></p>
 <p>If you want to replicate the study:</p>
-<p>Download all files in the <a href="https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0">dropbox repository</a> while considering the space constraints in your computer.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The files in the repository have a folder-like structure with the following key sections:</p>
+<p>Download all files in the <a href="https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0">dropbox repository</a> while considering the space constraints in your computer.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The files in the repository have a folder-like structure with the following key sections:</p>
 <ul>
 <li><p><strong>01_RawData</strong> – Includes the raw data files divided into four main folders</p>
 <ul>
-<li><p><em>01_crimes</em> - It is the repository with all the raw data on criminality for Mexico City and New York. It contains two sub-directories. <strong>01_nyc</strong> has all the crime data of New York City (in CSV and Excel formats) and <strong>03_cdmx</strong> has the analogous data from Mexico divided into two different CSV files (one between 2012 and 2015 and the other between 2016 and 2019).</p></li>
-<li><p><em>02_pollution</em> - Repository with all the air pollution data for New York and Mexico City. It contains two sub-directories. <strong><em>01_epa</em></strong> contains the air pollution data from the network of monitoring stations maintained by the US Environmental Protection Agency. This folder (<strong>01_epa</strong>) contains two additional folders, <strong>02_daily</strong> contains zipped daily measurement files for each air pollutant and year between 2000 and 2019 for the entire USA and <strong>02_StateData</strong> has a zipped file of hourly air pollution for each US state. Next, <strong><em>03_cdmx</em></strong> contains the air pollution data for Mexico City spread across three repositories; <strong>01_pol</strong> has a set of csv files with hourly air pollution data. <strong>02_weather</strong> has a similar structure for weather controls. And <strong>03_other</strong> contains a folder with the geographical location of measuring staions</p></li>
-<li><p>03_shapefiles – Folder with all the shape (spatial) files I use throughout the study</p></li>
+<li><p><em>01_crimes</em> - It is the repository with all the raw data on criminality for Mexico City and New York. It contains two sub-directories. <em>01_nyc</em> has all the crime data of New York City (in CSV and Excel formats) and <em>03_cdmx</em> has the analogous data from Mexico divided into two different CSV files (one between 2012 and 2015 and the other between 2016 and 2019).</p></li>
+<li><p><em>02_pollution</em> - Repository with all the air pollution data for New York and Mexico City. It contains two sub-directories. <em>01_epa</em> contains the air pollution data from the network of monitoring stations maintained by the US Environmental Protection Agency. This folder contains two additional folders, <em>02_daily</em> contains zipped daily measurement files for each air pollutant and year between 2000 and 2019 for the entire USA and <em>02_StateData</em> has a zipped file of hourly air pollution for each US state. Next, <em>03_cdmx</em> contains the air pollution data for Mexico City across three repositories; <em>01_pol</em> has a set of csv files with hourly air pollution data. <em>02_weather</em> has a similar structure for weather controls. And <em>03_other</em> contains a folder with the geographical location of measuring staions</p></li>
+<li><p>03_shapefiles – Folder with all the shape (spatial) files I use throughout the study. One for the boroughs in New York City and another one for the Mexican States</p></li>
 <li><p>04_weather - Folder with the weather data for New York City</p></li>
 </ul></li>
-<li><p><strong>02_GenData</strong> – Contains the set of data.frames I use for the estimation of point estimates. Each data comes from the scientific manipulation of the raw files in the 01_RawFiles repository.</p>
+<li><p><strong>02_GenData</strong> – Contains the set of data.frames I use for the estimation of point estimates. Each data comes from the scientific manipulation of the raw files in the <em>01_RawFiles</em> repository.</p>
 <ul>
 <li><p>01_crime: the folder contains three main files:</p>
 <ul>
-<li><strong>CrimesCdmx.rds</strong>: Crime data for Mexico City</li>
-<li><strong>CrimesNYC.rds</strong>: Crime data for New York City</li>
-<li><strong>crimes.rds</strong>: Crime data for Mexico City and New York</li>
+<li>CrimesCdmx.rds: Crime data for Mexico City</li>
+<li>CrimesNYC.rds: Crime data for New York City</li>
+<li>crimes.rds: Crime data for Mexico City and New York</li>
 </ul></li>
 <li><p>02_pol: The folder contain N main files</p>
 <ul>
-<li><p><strong>PolCdmx</strong>.<strong>rds</strong>: Air pollution data for Mexico City</p></li>
-<li><p><strong>PolWeatherCdmx</strong>.<strong>rds</strong>: Air pollution and weather data for Mexico City</p></li>
-<li><p><strong>polNYC</strong>.rds: Hourly pollution data for New York City</p></li>
-<li><p><strong>RawWeatherUS</strong>.rds: Hourly weather data for the US</p></li>
-<li><p><strong>PolWeatherNYC</strong>.rds: Air pollution and weather data for New York City</p></li>
-<li><p><strong>pol</strong>.rds: Air pollution and weather data for Mexico City and New York</p></li>
-<li><p><strong>idw</strong>.rds: Inverse distance weighted pollution data for both cities</p></li>
-<li><p><strong>PolIdw</strong>: Merge of pol.rds and idw.rds</p></li>
-<li><p><strong>PolNowCast<em>.rds</em></strong>: Final data frame with hourly air pollution, weather, and AQI values</p></li>
+<li><p>PolCdmx.rds: Air pollution data for Mexico City</p></li>
+<li><p>PolWeatherCdmx.rds: Air pollution and weather data for Mexico City</p></li>
+<li><p>polNYC.rds: Hourly pollution data for New York City</p></li>
+<li><p>RawWeatherNYC.rds: Hourly weather data for New York City</p></li>
+<li><p>PolWeatherNYC.rds: Air pollution and weather data for New York City</p></li>
+<li><p>RawPol.rds: Air pollution and weather data for Mexico City and New York</p></li>
+<li><p>IdwPol.rds: Inverse distance weighted pollution data for both cities</p></li>
+<li><p>PolReg.rds: Final data frame with hourly air pollution, weather, and AQI values</p></li>
 </ul></li>
-<li><p>03_RegData: Contains the files I use in the econometric analysis</p></li>
+<li><p>03_RegData: Contains the files I use in the econometric analysis</p>
+<ul>
+<li>DataReg: It is the main file I use for the empirical analysis</li>
+<li>DataRobustness: Additional data for robustness exercises</li>
+</ul></li>
+<li><p>04_results: Contains all the results from the econometric specifications. Each result comes from the file 03_scripts/04_reg</p></li>
 </ul></li>
 <li><p><strong>03_scripts</strong> – Here, I include all the R-scripts I use to transform the raw data into a useful format, perform descriptive statistics, and run my empirical specifications. I divide the scripts into tasks, particularly:</p>
 <ul>
@@ -214,7 +220,6 @@ ul.task-list{list-style: none;}
 <li><p>06_plot - Generates (one by one) all of the figures in the study</p></li>
 <li><p>99_robustness – Includes all robustness exercises I include in the study</p></li>
 </ul></li>
-<li><p><strong>AQAs_School_Absences_NYC</strong> – This folder contains the Quarto files necessary to replicate this website</p></li>
 </ul>
 
 

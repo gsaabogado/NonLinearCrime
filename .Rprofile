@@ -4,6 +4,8 @@ library(conflicted)
 library(tidyverse)
 library(scales)
 library(data.table)
+# Spatial
+library(sf)
 # HTML tables
 library(kableExtra)
 library(knitr)
@@ -14,6 +16,8 @@ library(lubridate)
 # Tables
 library(texreg)
 library(mgsub)
+# plots
+library(tmap)
 #### Solve conflicts ####
 conflict_prefer("filter", "dplyr")
 conflict_prefer("month", "lubridate")

@@ -145,7 +145,7 @@ ggplot(temporal) + geom_line(aes(x = value, y = dev, color = city, group = city)
 ```{r}
 # Set the path 
 file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
-#### Load the dpatial data
+#### Load the spatial data
 nyc = read_sf(paste0(file, "01_RawData/03_shapefiles/NYC Buroughs")) %>% 
   mutate(city = "New York") %>% select(city) 
 

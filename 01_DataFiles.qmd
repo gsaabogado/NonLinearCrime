@@ -118,7 +118,6 @@ kbl(PolNyc |> arrange(station, date, hour) |>
   kable_styling(bootstrap_option = c("hover")) |> 
   column_spec(c(1), italic = T, color = "DarkBlue") %>%
   footnote(general = "Sample of the air pollution data for New York City. Each observation contains the station id ant the date and hour time stamps. It also includes the geo-location of measuring stations and the measures of ozone (o3), fine particulate matter (pm25), coarse particulate matter (pm10), relative humidity (rh), temperature (temp), wind speed (wsp), and wind direction(wdr). Ozone in particles per billion, particulate matters in micrograms per cubic metter, relative humidity in percentage, temperature in celsius, wind speed in knots, and wind direction in meteorological degrees", general_title = "Notes:", footnote_as_chunk = T)
-# Take away the data
 ```
 
 ## Inverse Distance Weighting
@@ -152,10 +151,86 @@ In it, NowCast$^{i}_{st}$ is the transformed exposure value of pollutant $i$ at 
 
 
 # Regression data
+```{r}
+#| echo: false
+data = read_rds(paste0(file, "02_GenData/03_RegData/DataReg.rds")) |> ungroup()
+```
 
 I construct the final data set by adding the number of hourly crimes happening in a two-kilometer radius around each measuring station. In cases when a crime falls within the catchment area of two different stations, I assign the crime to the closest one. However, results are robust to double counting and different catchment radii. The final data set is a panel of 2.9 million hourly observations. Each observation contains the number of crimes occurring around each measuring station at time $t$ alongside recorded pollution values and weather covariates.
 
-Table X shows a sample of the final data set we use to estimate the effect of air pollution on the number of crimes around measuring stations in Mexico City and New York. 
+@tbl-RegA to @tbl-RegD show a sample of the final data set we use to estimate the effect of air pollution on the number of crimes around measuring stations in Mexico City and New York. The data contains `r comma(nrow(data))` observations across `r comma(length(unique(data$station)))` stations. 
+
+@tbl-RegA contains the main spatial and temporal identifiers we use in the econometric strategy. Particularly, each observation reports the city and station of the pollution and crime measurements alongside the date of observation and seasonal covariates like the year, month, day, week, weekday, and hour when the crimes ocurred.
+
+
+
+
+::: panel-tabset
+## Identifiers.
+```{r}
+#| label: tbl-RegA
+#| tbl-cap: Final data spatial and temporal identifiers
+#| tbl-cap-location: top
+#| echo: false
+# Show the data set
+kbl(data |> arrange(station, date, hour) |>  
+      select(c(city,station, date, year, month, day, week, weekday, hour)) %>% 
+      head(., 5), digits = 2) %>% 
+  kable_classic(full_width = T, html_font = "Cambria") %>% 
+  kable_styling(bootstrap_option = c("hover")) |> 
+  column_spec(c(1), italic = T, color = "DarkBlue") %>%
+  footnote(general = "Sample of the final data set I use for the estimation of point estimates regarding the relationship of air pollution and crime in New York City and New York. Each observation contains the station id, date, and hour identifiers It also includes a set of seasonal fixed effects", general_title = "Notes:", footnote_as_chunk = T)
+```
+
+## Air Pollution
+```{r}
+#| label: tbl-RegC
+#| tbl-cap: Final data spatial and temporal identifiers
+#| tbl-cap-location: top
+#| echo: false
+# Show the data set
+kbl(data |> arrange(station, date, hour) |>  
+      select(c(city,station, date, hour, NowCast)) %>% 
+      head(., 5), digits = 2) %>% 
+  kable_classic(full_width = T, html_font = "Cambria") %>% 
+  kable_styling(bootstrap_option = c("hover")) |> 
+  column_spec(c(1), italic = T, color = "DarkBlue") %>%
+  footnote(general = "Sample of the air pollution data for New York City. Each observation contains the station id ant the date and hour time stamps. It also includes the geo-location of measuring stations and the measures of ozone (o3), fine particulate matter (pm25), coarse particulate matter (pm10), relative humidity (rh), temperature (temp), wind speed (wsp), and wind direction(wdr). Ozone in particles per billion, particulate matters in micrograms per cubic metter, relative humidity in percentage, temperature in celsius, wind speed in knots, and wind direction in meteorological degrees", general_title = "Notes:", footnote_as_chunk = T)
+```
+## Crime
+```{r}
+#| label: tbl-RegD
+#| tbl-cap: Final data spatial and temporal identifiers
+#| tbl-cap-location: top
+#| echo: false
+# Show the data set
+kbl(data |> arrange(station, date, hour) |>  
+      select(c(city,station, date, hour, total:Violent, SexualCrimes)) %>% 
+      head(., 5), digits = 2) %>% 
+  kable_classic(full_width = T, html_font = "Cambria") %>% 
+  kable_styling(bootstrap_option = c("hover")) |> 
+  column_spec(c(1), italic = T, color = "DarkBlue") %>%
+  footnote(general = "Sample of the air pollution data for New York City. Each observation contains the station id ant the date and hour time stamps. It also includes the geo-location of measuring stations and the measures of ozone (o3), fine particulate matter (pm25), coarse particulate matter (pm10), relative humidity (rh), temperature (temp), wind speed (wsp), and wind direction(wdr). Ozone in particles per billion, particulate matters in micrograms per cubic metter, relative humidity in percentage, temperature in celsius, wind speed in knots, and wind direction in meteorological degrees", general_title = "Notes:", footnote_as_chunk = T)
+```
+## Weather
+```{r}
+#| label: tbl-RegB
+#| tbl-cap: Final data spatial and temporal identifiers
+#| tbl-cap-location: top
+#| echo: false
+# Show the data set
+kbl(data |> arrange(station, date, hour) |>  
+      select(c(city,station, date, hour, atm, rh, wdr, temp, wsp, rain, rain_ntile, temp_ntile, wdr8)) %>% 
+      head(., 5), digits = 2) %>% 
+  kable_classic(full_width = T, html_font = "Cambria") %>% 
+  kable_styling(bootstrap_option = c("hover")) |> 
+  column_spec(c(1), italic = T, color = "DarkBlue") %>%
+  footnote(general = "Sample of the air pollution data for New York City. Each observation contains the station id ant the date and hour time stamps. It also includes the geo-location of measuring stations and the measures of ozone (o3), fine particulate matter (pm25), coarse particulate matter (pm10), relative humidity (rh), temperature (temp), wind speed (wsp), and wind direction(wdr). Ozone in particles per billion, particulate matters in micrograms per cubic metter, relative humidity in percentage, temperature in celsius, wind speed in knots, and wind direction in meteorological degrees", general_title = "Notes:", footnote_as_chunk = T)
+```
+:::
+
+@tbl-RegB includes a sample of the air pollution data (the NowCast AQI) we use as causal variable. @tbl-RegC complements this information with the set of dependent crime variables. Particularly, each observation refers to the number of crimes happening within two kilometres of station $s$ at time $t$. For instance, for station 005236047	in New York, on the 2006-12-21	at 01:00 am, there was one crime (total column). This crime was Violent (violent column) and classified as an assault of the NYPD. Finally @tbl-RegC includes a sub-sample of the weather variables I use through the study. 
+
 
 
 

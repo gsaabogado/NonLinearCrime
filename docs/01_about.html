@@ -2,15 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Luis Sarmiento">
-<meta name="dcterms.date" content="2022-09-26">
-<meta name="description" content="This website contains all the data and R-code necessary to replicate the results of the study: \ The Nonlinear Relationship Between Pollution and Crime: Evidence from Mexico City and New York forthcomming in Environmental Resarch - Health.">
+<meta name="dcterms.date" content="2022-10-04">
 
-<title>The Nonlinear Relationship Between Pollution and Crime -</title>
+<title>The Nonlinear Relationship Between Pollution and Crime - About</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,7 +59,7 @@ ul.task-list{list-style: none;}
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,13 +90,20 @@ ul.task-list{list-style: none;}
     <a class="nav-link" href="https://luissarmiento.net/">Personal Site</a>
   </li>  
 </ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <h1 class="quarto-secondary-nav-title">About</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -125,7 +131,7 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_about.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./01_about.html" class="sidebar-item-text sidebar-link active">About</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -144,14 +150,46 @@ ul.task-list{list-style: none;}
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#replication" id="toc-replication" class="nav-link active" data-scroll-target="#replication">Replication</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">About</h1>
+</div>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Luis Sarmiento </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 4, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
 <p>This research report contains three primary sections to accompany the study on the relationship between air pollution exposure and criminal behaviour in Mexico City and New York.</p>
 <ol type="1">
 <li><p><strong>Introduction</strong> – Contains the instructions to replicate the data-sets and results of the study</p></li>
@@ -167,24 +205,29 @@ ul.task-list{list-style: none;}
 </ul>
 </div>
 <ol start="3" type="1">
-<li><strong>Study Exhibits</strong> – Includes the R code and data necessary to replicate all the figures and tables in the study</li>
+<li><strong>Study Exhibits</strong> – Includes the R code and data necessary to replicate all the figures and tables in the study. It is divided into four subsections.</li>
 </ol>
-</section>
+<ul>
+<li>Theoretical background</li>
+<li>Data</li>
+<li>Results</li>
+<li>Robustness</li>
+<li>Appendix</li>
+</ul>
 <section id="replication" class="level2">
 <h2 class="anchored" data-anchor-id="replication">Replication</h2>
 <p>All the raw files needed to run the code are in the <a href="https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0">dropbox repository</a></p>
-<p>If you want to replicate the study:</p>
-<p>Download all files in the <a href="https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0">dropbox repository</a> while considering the space constraints in your computer.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>If you want to replicate the study, download all files in the <a href="https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0">dropbox repository</a> while considering the space constraints in your computer.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>The files in the repository have a folder-like structure with the following key sections:</p>
 <ul>
 <li><p><strong>01_RawData</strong> – Includes the raw data files divided into four main folders</p>
 <ul>
-<li><p><em>01_crimes</em> - It is the repository with all the raw data on criminality for Mexico City and New York. It contains two sub-directories. <em>01_nyc</em> has all the crime data of New York City (in CSV and Excel formats) and <em>03_cdmx</em> has the analogous data from Mexico divided into two different CSV files (one between 2012 and 2015 and the other between 2016 and 2019).</p></li>
-<li><p><em>02_pollution</em> - Repository with all the air pollution data for New York and Mexico City. It contains two sub-directories. <em>01_epa</em> contains the air pollution data from the network of monitoring stations maintained by the US Environmental Protection Agency. This folder contains two additional folders, <em>02_daily</em> contains zipped daily measurement files for each air pollutant and year between 2000 and 2019 for the entire USA and <em>02_StateData</em> has a zipped file of hourly air pollution for each US state. Next, <em>03_cdmx</em> contains the air pollution data for Mexico City across three repositories; <em>01_pol</em> has a set of csv files with hourly air pollution data. <em>02_weather</em> has a similar structure for weather controls. And <em>03_other</em> contains a folder with the geographical location of measuring staions</p></li>
-<li><p>03_shapefiles – Folder with all the shape (spatial) files I use throughout the study. One for the boroughs in New York City and another one for the Mexican States</p></li>
+<li><p><em>01_crimes</em> -It is the repository with all the raw data on criminality for Mexico City and New York. It contains two sub-directories. <em>01_nyc</em> has all the crime data forNew York City (in CSV and Excel formats), and <em>03_cdmx</em> has comparable data from Mexico City. <em>03_cdmx</em> is further divided into two different CSV files (one between 2012 and 2015 and the other between 2016 and 2019).</p></li>
+<li><p><em>02_pollution</em> - Repository with all the air pollution data for New York and Mexico City. It contains two sub-directories. <em>01_epa</em> contains the air pollution data from the network of monitoring stations maintained by the US Environmental Protection Agency. This folder contains two additional folders;* 02_daily* contains zipped daily measurements of air pollution between 2000 and 2019 for the entire USA, and <em>02_StateData</em> contains zipped files of hourly air pollution across American states. Next, <em>03_cdmx</em> contains the air pollution data for Mexico City across three repositories; <em>01_pol</em> has a set of CSV files with hourly air pollution data. <em>02_weather</em> has a similar structure for weather controls. And <em>03_other</em> contains a folder with the geographical location of measuring stations.</p></li>
+<li><p>03_shapefiles – Folder with all the shape (spatial) files I use throughout the study. One for the boroughs in New York City and another one for the Mexican States.</p></li>
 <li><p>04_weather - Folder with the weather data for New York City</p></li>
 </ul></li>
-<li><p><strong>02_GenData</strong> – Contains the set of data.frames I use for the estimation of point estimates. Each data comes from the scientific manipulation of the raw files in the <em>01_RawFiles</em> repository.</p>
+<li><p><strong>02_GenData</strong> – Contains the set of data frames I use for the estimation of point estimates. Each data-file comes from the scientific manipulation of the raw data in the <em>01_RawFiles</em> repository. I divide the repository into four folders:</p>
 <ul>
 <li><p>01_crime: the folder contains three main files:</p>
 <ul>
@@ -192,7 +235,7 @@ ul.task-list{list-style: none;}
 <li>CrimesNYC.rds: Crime data for New York City</li>
 <li>crimes.rds: Crime data for Mexico City and New York</li>
 </ul></li>
-<li><p>02_pol: The folder contain N main files</p>
+<li><p>02_pol: The folder contain 6 files</p>
 <ul>
 <li><p>PolCdmx.rds: Air pollution data for Mexico City</p></li>
 <li><p>PolWeatherCdmx.rds: Air pollution and weather data for Mexico City</p></li>
@@ -205,20 +248,20 @@ ul.task-list{list-style: none;}
 </ul></li>
 <li><p>03_RegData: Contains the files I use in the econometric analysis</p>
 <ul>
-<li>DataReg: It is the main file I use for the empirical analysis</li>
+<li>DataReg: It is the main file</li>
 <li>DataRobustness: Additional data for robustness exercises</li>
 </ul></li>
-<li><p>04_results: Contains all the results from the econometric specifications. Each result comes from the file 03_scripts/04_reg</p></li>
+<li><p>04_results: Contains all the results from the econometric specifications. Each result comes from the file <strong>03_scripts/04_reg.R</strong> script.</p></li>
 </ul></li>
 <li><p><strong>03_scripts</strong> – Here, I include all the R-scripts I use to transform the raw data into a useful format, perform descriptive statistics, and run my empirical specifications. I divide the scripts into tasks, particularly:</p>
 <ul>
-<li><p>01_crimes – It transforms and cleans the raw crime data into the format necessary to use in the empirical design</p></li>
-<li><p>02_pol – It transforms and cleans the air pollution and weather variables I use throughout the analysis</p></li>
-<li><p>03_RegData – It merges the crime and air pollution data according to the specifications of the stury</p></li>
+<li><p>01_crimes – Transforms and cleans the raw crime data into the format necessary to use in the empirical design</p></li>
+<li><p>02_pol – Transforms and cleans the air pollution and weather variables</p></li>
+<li><p>03_RegData – Merges the crime and air pollution data according to the specifications of the stury</p></li>
 <li><p>04_reg - Contains all the econometric analysis</p></li>
 <li><p>05_tab - Generates (one by one) all of the tables in the study</p></li>
 <li><p>06_plot - Generates (one by one) all of the figures in the study</p></li>
-<li><p>99_robustness – Includes all robustness exercises I include in the study</p></li>
+<li><p>99_robustness – Includes all robustness exercises</p></li>
 </ul></li>
 </ul>
 

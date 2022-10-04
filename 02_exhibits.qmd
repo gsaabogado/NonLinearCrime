@@ -8,6 +8,7 @@ format:
     code-fold: true
     code-summary: "Show the Code"
 ---
+
 ```{r}
 #| echo: false
 conflict_prefer("filter", "dplyr")
@@ -15,8 +16,28 @@ conflict_prefer("month", "lubridate")
 conflict_prefer("hour", "lubridate")
 conflict_prefer("year", "lubridate")
 ```
+In this section, I present all the exhibits in the study:
+*The nonlinear effects of pollution on crime: Evidence from Mexico City and New York* -- Forthcoming in *Environmental Research - Health*
 
-### Theoretical Background
+I structure the section in four different subsections:
+
+- Theoretical Background
+- Data
+- Results
+- Robustness
+- Appendix
+
+These subsections are in line with the study's structure. For each subsection, there is a panel-tabset of figures and tables part of the corresponding section in the printer article. Each tab contains the table and figure number that corresponds to the original study. 
+
+
+# Theoretical Background
+
+In the theoretical section of the study, I present a slight theoretical introduction to the relationship between air pollution and crime while building support for the hypothesis that air pollution has a non-linear effect on criminality. This section consist of four figures
+
+- Figure 1: *Probability mass function for different Poisson distributions*. The figure presents the probability mass function of this study's primary data set on the number of hourly crimes occurring in the vicinity of pollution measuring stations in Mexico City and New York alongside four simulated Poisson distributions with variances equal to 0.25, 0.5, 0.75, and 1.0
+- Figure 2 (a): *Relationship of the matching function with the number of victims and criminals.* The figure shows the proposed theoretical relation between the match of victims and criminals in the market and the number of agents.
+- Figure 2 (b): *Relationship between exposure to air pollution and the number of victims and criminals.* The figure shows the theoretical relationship between the number of agents in the market and air pollution.
+- Figure 3: *Theoretical relationship between air pollution and crime; the red line marks the level of air pollution that maximizes criminality, i.e., $\frac{\partial crime}{\partial pollution} = 0$.*
 
 ::: panel-tabset
 ## Figure 1
@@ -25,6 +46,8 @@ conflict_prefer("year", "lubridate")
 #| label: fig-Figure1
 #| fig-cap: Probability mass function for different Poisson distributions
 #| fig-cap-location: top
+#| fig-width: 5
+#| fig-height: 3.5
 #| echo: true
 # Set the path 
 file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
@@ -63,13 +86,17 @@ ggplot(dplyr::filter(plot, value < 10)) +
   scale_x_continuous(breaks= scales::pretty_breaks()) +
   scale_color_manual(values = c("gray20", "gray40", "gray60", "gray80", "orange"))
 ```
+
 *Notes:* This figure presents the probability mass function of this study's primary data set on the number of hourly crimes occurring in the vicinity of pollution measuring stations in Mexico City and New York alongside four simulated Poisson distributions with variances equal to 0.25, 0.5, 0.75, and 1.0
 
 ## Figure 2(a)
+
 ```{r}
 #| label: fig-Figure2a
 #| fig-cap: Relationship of the matching function with the number of victims and criminals
 #| fig-cap-location: top
+#| fig-width: 5
+#| fig-height: 3.5
 #| echo: true
 # Construct the dummy data
 data = data.frame(temp = seq(0,40,2), s = seq(0, 1, 0.05), p = seq(1, 0, -0.05)) |> 
@@ -81,11 +108,15 @@ ggplot() + geom_line(data = data, aes(x = temp, y = s_1)) +
   theme(panel.background = element_blank(), axis.line = element_line(), axis.text = element_blank()) + ggpubr::grids() +
   labs(x = "V(t), C(t)", y= "m[V(t), C(t)]") 
 ```
+
 ## Figure 2(b)
+
 ```{r}
 #| label: fig-Figure2b
-#| fig-cap: relationship between exposure to air pollution and the number of victims and criminals
+#| fig-cap: Relationship between exposure to air pollution and the number of victims and criminals
 #| fig-cap-location: top
+#| fig-width: 5
+#| fig-height: 3.5
 #| echo: true
 # Construct the simulated data
 data = data.frame(temp = seq(0,40,2), s = seq(0, 1, 0.05), p = seq(1, 0, -0.05)) |> 
@@ -97,15 +128,27 @@ ggplot() + geom_line(data = data, aes(x = temp, y = s_1)) +
   theme(panel.background = element_blank(), axis.line = element_line(), axis.text = element_blank()) + ggpubr::grids() +
   labs(y = "V(t), C(t)", x= "Exposure to air Pollution") 
 ```
+
 ## Figure 3
+
 ![Theoretical relationship between air pollution and crime; the red line marks the level of air pollution that maximizes criminality, i.e., $\frac{\partial crime}{\partial pollution} = 0$.](images/FunctionC.png){#fig-figure2}
 :::
-### Descriptive Statistics (Data section)
+
+# Descriptive Statistics (Data section)
+This section corresponds to the *Data* section of the study. It contains a set of descriptive statistics and data documentation through two figures and one table.
+
+- Figure 4: The grid shows the *temporal behavior of criminality in Mexico City and New York.* Clockwise it shows the hourly, monthly, and yearly variation concerning the average.
+- Figure 5: *Location of pollution measuring stations in Mexico City and New York.*
+- Table 1: *Descriptive statistics on the number of hourly crimes happening in a two-kilometer radius around pollution measuring stations in Mexico City and New York.*
+
 ::: panel-tabset
 ## Figure 4
+
 ```{r}
 #| label: fig-Figure4
 #| fig-cap: The grid shows the temporal behavior of criminality in Mexico City and New York. Clockwise it shows the hourly, monthly, and yearly variation concerning the average.
+#| fig-width: 7
+#| fig-height: 3.5
 #| fig-cap-location: top
 #| echo: true
 # Set the path 
@@ -141,8 +184,16 @@ ggplot(temporal) + geom_line(aes(x = value, y = dev, color = city, group = city)
   scale_x_continuous(breaks= scales::pretty_breaks())
 
 ```
+
 ## Figure 5
+
 ```{r}
+#| label: fig-Figure5
+#| fig-cap: Location of pollution measuring stations in Mexico City and New York
+#| fig-width: 7
+#| fig-height: 3.5
+#| fig-cap-location: top
+#| echo: true
 # Set the path 
 file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
 #### Load the spatial data
@@ -180,12 +231,59 @@ tmap = tm_graticules(labels.cardinal = F, alpha = 0.5, , labels.size = 0.75) +
             inner.margins = c(0.05, 0.05, 0.05, 0.05)); tmap
 ```
 
+## Table 1
+
+```{r}
+#| label: tbl-Table1
+#| tbl-cap: Descriptive statistics on the number of hourly crimes happening in a two-kilometer radius around pollution measuring stations in Mexico City and New York.
+#| tbl-cap-location: top
+#| echo: true
+# Set the path 
+file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
+# Load the data set
+data = read_rds(paste0(file, "02_GenData/03_RegData/DataReg.rds"))
+# Select only the crime data
+data = select(data, city, station, date, hour, 
+              a = total, b = Violent, c = NonViolent) %>%
+  gather(., crime, value, c(a, b, c))
+# Compute the shares of zeros 
+zeros = ungroup(data) %>% 
+  group_by(city, crime) %>%
+  summarise(`Zeros N` = sum(value == 0), NoZeros = sum(value > 0)) %>% 
+  mutate(`Zeros %` = `Zeros N`/(`Zeros N` + NoZeros)) %>% 
+  mutate(`Zeros %` = round(`Zeros %`, 2)) %>% select(-NoZeros) %>%
+  arrange(city, crime)
+# Spread the data set
+data = spread(data, crime, value)
+# Create the data frame of summary stats
+tab = st(ungroup(data) |> dplyr::filter(city == "cdmx") |> select(a, b, c), 
+   summ = c("mean(x)", "var(x)", "min(x)", "max(x)", "notNA(x)"), 
+   summ.names = c("Mean", "Variance", "Min", "Max", "N"), 
+   labels = c("Total", "Violent", "Non Violent"), 
+   digits = 2, fixed.digits = T, out = "return") %>%
+  
+  rbind(.,  st(ungroup(data) |> dplyr::filter(city == "nyc") |> select(a, b, c), 
+   summ = c("mean(x)", "var(x)", "min(x)", "max(x)", "notNA(x)"), 
+   summ.names = c("Mean", "Variance", "Min", "Max", "N"), 
+   labels = c("Total", "Violent", "Non Violent"), 
+   digits = 2, fixed.digits = T, out = "return"))
+# Add the year of observations
+tab = mutate(tab, `Obs Period` = c(rep("2012-2019", 3), rep("2007-2017", 3)))
+# add the zeros
+tab = cbind(tab, `Zeros N` = zeros$`Zeros N`); tab = cbind(tab, `Zeros %` =zeros$`Zeros %`)
+tab = select(tab, Variable, `Obs Period`, Mean:N, `Zeros N`, `Zeros %`)
+# Create the Kable object 
+kbl(tab) %>%
+kable_classic() %>%
+  kable_styling(font_size = 14, full_width = F) %>%
+  kable_styling(bootstrap_option = c("hover")) %>% 
+   pack_rows("Mexico City", 1, 3) %>% pack_rows("Mexico City", 4, 6)
+```
 :::
 
+# Results section
 
-### Results section
-
-@tbl-Table2 contains the coefficients on the linear effect of the Now Cast AQI on crime counts in New York and Mexico City. @tbl-Table3 contains the coefficients of the quadratic model estimating the relationship between pollution and criminality in Mexico city and New York. @tbl-Table4 contains the coefficients of the linear and quadratic models on the relationship between pollution and criminality for violent and nonviolent crimes in Mexico city and New York. @tbl-Table5 contains the estimates on the effects across all crime categories.
+@tbl-Table2 contains the coefficients on the linear effect of the Now Cast AQI on crime counts in New York and Mexico City. @tbl-Table3 contains the coefficients of the quadratic model estimating the relationship between pollution and criminality. @fig-Figure6 shows the out-of-sample prediction of the quadratic model coefficients. @fig-Figure7 portrays the marginal effect of each additional AQI unit on criminality. @fig-Figure8 adds the point estimates of the Nonparametric model. @tbl-Table4 contains the coefficients of the linear and quadratic models on the relationship between pollution and criminality for violent and nonviolent crimes. @tbl-Table5 contains the estimates on the effects across all crime categories.
 
 ::: panel-tabset
 ## Table 2
@@ -266,6 +364,143 @@ kbl(tab, align = "c")  %>%
   footnote(general = "$^{***}p<0.01$, $^{**}p<0.05$, $^*p<0.1$. This table shows the effect of the linear and squared value of the Now Cast AQI on fthe number of crimes occurring in a two-kilometer radius around pollution measuring stations in Mexico City and New York. Interpret point estimates as the percentage change in the number of crimes due to a ten units increase in the Now Cast AQI. Results come from a PMLE panel model across three different specifications. Column (1) controls for station, month, hour, and weekday fixed effects, (2) includes an interaction term of year-by-month fixed effects, and (3) adds the interaction of year-by-month-by-station fixed effects. All three specifications further control linearly for wind speed and relative humidity and nonparametrically for temperature, rain, and the interaction of relative humidity and temperature -- standard errors clustered at the station level.", footnote_as_chunk = T)
 ```
 
+## Figure 6
+
+```{r}
+#| label: fig-Figure6
+#| fig-cap: Nonlinear effect of air pollution on criminality
+#| fig-cap-location: top
+#| echo: true
+#| fig-width: 7
+#| fig-height: 3.5
+# Set the path 
+file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
+# Load the data
+sum = read_rds(paste0(file, "02_GenData/04_results/PoissonQuadratic.rds")) %>% 
+  filter(var == "NowCast" & specification == "3")
+# Set the range for the out-of-sample prediction
+plot = data.frame(city = c("cdmx", "nyc")) %>% split(., f = .$city) %>%
+  lapply(., function(x) data.frame(city = x$city, aqi = seq(0, 200, 1)))
+# Include the linear estimate and SE
+plot = lapply(plot, function(x) 
+  left_join(x, select(filter(sum, estimate == "Linear"), city, LinearEst = est, LinearSe = se)) %>%
+  left_join(select(filter(sum, estimate == "Quadratic"), city, QuadraticEst = est, QuadraticSe = se)))
+# Determine the out-of-sample effect
+plot = lapply(plot, function(x) 
+  mutate(x, LinearValue = aqi*LinearEst) %>% 
+    mutate(QuadraticValue = aqi^2*QuadraticEst))
+# Determine the effect and bliss point
+plot = lapply(plot, function(x) 
+  mutate(x, value = LinearValue + QuadraticValue) %>% 
+    mutate(bliss = max(filter(x, value > dplyr::lag(value, 1))$aqi))) %>%
+  rbindlist(.)
+# Transform to number of additional crimes
+plot = plot %>% mutate_at(vars(value), function(x) x = (exp(x) -1)*100)
+# Change the name of the cities
+plot = mutate(plot, city  = mgsub(city, c("nyc", "cdmx"), c("New York City", "Mexico City")))
+# Make the plot
+ggplot(plot) +
+  geom_rect(data = plot %>% group_by(city) %>% filter(value == max(value)), 
+            aes(ymin = 0, ymax = value, xmin = 0, xmax = 50), alpha = 0.2, fill = "green")  +
+  geom_rect(data = plot %>% group_by(city) %>% filter(value == max(value)), 
+            aes(ymin = 0, ymax = value, xmin = 51, xmax = 100), alpha = 0.2, fill = "yellow")  +
+  geom_rect(data = plot %>% group_by(city) %>% filter(value == max(value)), 
+            aes(ymin = 0, ymax = value, xmin = 101, xmax = 150), alpha = 0.2, fill = "orange")  +
+  geom_rect(data = plot %>% group_by(city) %>% filter(value == max(value)), 
+            aes(ymin = 0, ymax = value, xmin = 151, xmax = 200), alpha = 0.2, fill = "brown")  +
+  geom_line(aes(x = aqi, y = value, group = 1)) +
+  theme(panel.background = element_rect(fill = "white", color = "white"), 
+        strip.background = element_rect(fill = "white", color = "white"),text = element_text(size = 10), 
+        axis.line = element_line(), strip.text = element_text(hjust = 0), 
+        legend.position = "bottom", legend.title = element_blank() , panel.spacing = unit(2, "lines"),) +
+  grids(color = "gray90") + labs(y = "Crimes", x = "AQI") + 
+  facet_wrap(~city, scales = "free") + grids() +
+  geom_point(data = filter(plot, aqi == bliss), aes(x = aqi, y = value)) +
+  geom_rect(data = filter(plot, aqi == bliss), aes(ymin = 0, ymax = value, xmin = aqi, xmax = aqi), 
+            color = "black", linetype = "dotted", alpha = 0.5) +
+  geom_text(data = filter(plot, aqi == bliss), 
+            aes(aqi, value, label = (paste(expression(paste(frac(paste(partialdiff,"Crimes"),
+                                                           paste(partialdiff,"Pol")), " = 0"))))), 
+            parse = T, hjust = 2, vjust = 1.1, size = 3.5, angle = 90)                                      
+```
+
+Notes: *This figure shows the value of the Now Cast AQI on the horizontal axis and the effect of multiplying linear and quadratic coefficients by this concentration level on the vertical axis. Each color block refers to the risk levels of exposure proposed by the EPA (see figure z). The vertical line indicates the point where the impact of exposure stops increasing and starts decreasing criminality. Linear and quadratic coefficients come from a PMLE panel model controlling for weather, year-by-month-by-station, hour, and weekday fixed effects -- standard errors clustered at the station level.*
+
+## Figure 7
+```{r}
+#| label: fig-Figure7
+#| fig-cap: Estimated marginal effects of air pollution on crime
+#| fig-cap-location: top
+#| echo: true
+#| fig-width: 7
+#| fig-height: 3.5
+# Set the path 
+file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
+# Load the data
+nyc = read_rds(paste0(file, "/02_GenData/04_results/NycMarginal.rds"))
+cdmx = read_rds(paste0(file, "/02_GenData/04_results/CdmxMarginal.rds"))
+# Add both data sets together
+data = rbindlist(list(`New York City` = nyc, `Mexico City` = cdmx), idcol = "city")
+# Take the exponent of the point estimates
+data = data %>% mutate_at(vars(dydx, BtrSe), function(x) x = (exp(x) -1)*100)
+# Determine the value in which the marginal effect crosses the horizontal axis
+data = split(data, f = data$city) %>% lapply(., function(x) x = x |> 
+  mutate(effect = ifelse(abs(dydx) == min(abs(as.numeric(dydx)), na.rm = T), as.numeric(NowCast), NA))|> 
+  mutate(effect = mean(as.numeric(effect), na.r = T))) %>% rbindlist(.)
+# Review the moment in which the point estimates are no longer significant
+data = data |> mutate(positive = abs(dydx + BtrSe*1.645), negative = abs(dydx  - BtrSe*1.645))
+#### Plot the effect #####
+ggplot(data) + 
+  geom_line(aes(x = NowCast, y = dydx)) +
+  geom_line(aes(x = NowCast, y = dydx + BtrSe*1.645), col = "orange") +
+  geom_line(aes(x = NowCast, y = dydx - BtrSe*1.645), col = "orange") +
+  geom_vline(aes(xintercept = effect), linetype = "dashed") +
+  theme(panel.background = element_blank(), axis.line = element_line(), 
+        strip.background = element_blank(), strip.text = element_text(hjust = 0)) + 
+  ggpubr::grids() + facet_wrap(~city, scales = "free") +
+  labs(y = expression(paste(partialdiff,"Crime","/",partialdiff,"Air Pol. (90% CI)")), x = "Now Cast Aqi")                                   
+```
+Notes: *This figure shows the value of the NowCast aqi on the horizontal axis and the partial derivative of criminality concerning the NowCast aqi on the vertical axis. The vertical line indicates the point where the impact of exposure stops increasing and starts decreasing criminality. Point estimates come from the PMLE panel model controlling for weather, year-by-month-by-station, hour, and weekday fixed effects. I compute the marginal effects with the R-marginal effects package. -- standard errors estimated through one thousand bootstraps.*
+
+## Figure 8
+```{r}
+#| label: fig-Figure8
+#| fig-cap: Non-parametric estimates of the effect of pollution on criminality
+#| fig-cap-location: top
+#| echo: true
+#| fig-width: 7
+#| fig-height: 3.5
+# Set the path 
+file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
+# Load the data sets
+data = read_rds(paste0(file, "02_GenData/04_results/PoissonNonParametric.rds"))
+# Take the exponent of the point estimates
+data = data %>% mutate_at(vars(est, se), function(x) x = (exp(x) -1)*100)
+#### Change the name of pollutants ####
+data = mutate(data, var  = gsub("NowCast", "AQI", var))
+data = mutate(data, city  = mgsub(city, c("nyc", "cdmx"), c("New York City", "Mexico City")))
+#### Organize the cities as factors ####
+data = mutate(data, city = factor(city, levels = c("Mexico City", "New York City")))
+#### Plot the point estimates for the prefered specification ####
+ggplot(filter(data, grepl("AQI", var), specification == "3")) +
+  stat_smooth(aes(x = min, y = est), method="lm", se=FALSE, 
+              fill = NA, formula=y ~ poly(x, 2, raw=TRUE), colour="darkgrey", lwd = 0.5) + 
+  geom_point(aes(x = min, y = est)) +
+  geom_errorbar(aes(ymin = est-se*1.645, ymax = est+se*1.645, x = min), width = 8) +
+  facet_wrap(~city, scales = "free") +
+  theme(panel.background = element_rect(fill = "transparent"),
+        strip.background = element_rect(fill = "transparent"),
+        strip.text = element_text(hjust = 0), axis.line = element_line(), 
+        legend.position = "bottom", panel.spacing = unit(2, "lines"),
+        legend.title = element_blank(), axis.text.x = element_blank(), 
+        axis.ticks.x = element_blank())  +
+  grids() + geom_hline(aes(yintercept = 0), color = "orange") +
+  geom_text(aes(x = min, y = est+se*1.645, label = bin), size = 2.5, vjust = -0.5) +
+  labs(x = "Exposure bin", y = "Estimate") +
+  annotate("segment", x=-Inf, xend=Inf, y=-Inf, yend=-Inf) +
+  annotate("segment", x=-Inf, xend=-Inf, y=-Inf, yend=Inf, color = "black", lwd = 1)
+```
+Notes: *This figure shows the effect of the NowCast AQI on the number of crimes occurring in a two-kilometer radius around pollution measuring stations in Mexico City and New York. Interpret point estimates as the effect of one hour in the indicated bin concerning the lowest bin value. Point estimates come from a non-parametric PMLE panel model of crime as a function of six bin indicators. This model contains weather controls alongside year-by-month-by-station, hour, and weekday fixed effects. The grey line is a second-degree polynomial fit across point estimates -- standard errors clustered at the station level. *
 ## Table 4
 
 ```{r}
@@ -360,9 +595,9 @@ kbl(tab, align = "c") %>%
 ```
 :::
 
-### Robustness section
+# Robustness section
 
-@tbl-Table6 contains the main results of the IV strategy
+@tbl-Table6 contains the main results of the IV strategy. @tbl-Table7 looks at point estimates across different estimators, @tbl-Table8 across different specifications, and @tbl-Table9 estimates the dynamic effect with distributed lag nonlinear models.  
 
 ::: panel-tabset
 ## Table 6
@@ -561,6 +796,197 @@ kbl(tab, align = "c") %>%
   kable_styling(bootstrap_option = c("hover")) %>%   
   pack_rows("Linear Model", 1, 4) %>%
   pack_rows("Quadratic Model", 5, 10) %>%
-  footnote(general = "$^{***}p<0.01$, $^{**}p<0.05$, $^*p<0.1$. This table shows the effect of the NowCast Aqi on the number of crimes occurring in a two-kilometer radius around pollution measuring stations in Mexico City and New York. Results come from two different panel models across four different robustness exercises. The linear model only controls for the effect of the NowCast Aqi, and the quadratic model further includes its squared value as an additional covariate. Column (1) contains estimates of a regression model where I assign all crimes within a 2km radius to each measuring station. The only difference with the standard design is that crimes can now be assigned to more than one station as long as they occur within the 2 km catchment radius. In (2), I exclude all observations happening at midday because of the irregular jump in the number of crimes occurring at this hour. Finally, columns (3) and (4) reduce the catchment radius of measuring stations to 1,000 and 500 meters. Interpret coefficients as the percentage increase in criminality due to a ten units increase in the NowCast Aqi. The econometric design additionally accounts for weather controls and year-by-month-by-station, hour, and weekday fixed effects -- standard errors clustered at the station level.", footnote_as_chunk = T) %>%  scroll_box(height = "500px") 
+  footnote(general = "$^{**}p<0.05$, $^*p<0.1$. This table shows the effect of the NowCast AQI on the number of crimes occurring in a two-kilometer radius around pollution measuring stations in Mexico City and New York. Point estimates come from distributed lag non-linear model estimates with Poisson pseudo-maximum likelihood estimators. We present results for models across four lag structures (1, 4, 8, and 16 hours before the crime). All estimates contain weather controls and year-by-month-by-station, hour, and weekday fixed effects. Interpret point estimates as the percentage change in the number of crimes due to a ten units increase in the NowCast AQI--standard errors clustered at the station level..", footnote_as_chunk = T) %>%  scroll_box(height = "500px") 
 ```
+:::
+
+# Appendix
+
+- Figure A1: Bar plot on the number of stations per year in Mexico City and New York.
+- Figure A2: Color coded health risks for the EPA air quality index.
+- Table A1: Effects of air pollution on criminality across different specifications of weather covariates.
+- Table A2: Effects of air pollution on criminality across different clustering of standard errors.
+- Figure A3: Box plots of raw and IV-fitted values of the NowCast AQI
+
+::: panel-tabset
+## Figure A1
+```{r}
+#| label: fig-FigureA1
+#| fig-cap: Number of stations per year
+#| fig-cap-location: top
+#| echo: true
+#| fig-width: 7
+#| fig-height: 3.5
+# Determine the path 
+file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
+# Load the data set
+data = read_rds(paste0(file, "02_GenData/03_RegData/DataReg.rds"))
+# Set the data for the plot
+plot = data %>% group_by(city, year) %>% 
+  summarise(stations = length(unique(station))) %>% 
+  mutate(city = ifelse(grepl("nyc", city), "New York", "Mexico City")) 
+# Plot the number of stations per year for both cities
+ggplot(plot) + 
+  geom_bar(aes(x = year, y = stations), stat = "identity", fill = "black") +
+  theme(panel.background = element_rect(fill = "transparent"),
+        strip.background = element_rect(fill = "transparent"),
+        strip.text = element_text(hjust = 0),  legend.title = element_blank(), 
+        legend.box.background = element_rect(fill = "transparent"),
+        legend.background = element_blank(), legend.key = element_rect(fill = "transparent"),
+        axis.line = element_line(), legend.position = c(0.85, 0.7))  +
+  ggpubr::grids() + labs(x = "Year", y = "Number of Stations") + facet_wrap(~city, scales = "free") +
+  scale_x_continuous(breaks= scales::pretty_breaks()) 
+
+
+```
+
+## Figure A2
+![Color coded health risks for the EPA air quality index](images/AQIEPA.PNG){#fig-figureA2}
+
+
+## Table A1
+```{r}
+#| label: tbl-TableA1
+#| tbl-cap: Effects of air pollution on criminality across different specifications of weather covariates
+#| tbl-cap-location: top
+#| echo: true
+# Set the path 
+file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
+# Load the data
+tab = read_rds(paste0(file, "02_GenData/04_results/AlternativeWeatherEst.rds"))
+# Take the exponent of the point estimates 
+tab = tab %>% mutate_at(vars(est, se), function(x) x = (exp(x) -1)*100*10)
+# Create the data frame of linear coefficients
+linear = tab %>% dplyr::filter(grepl("Linear", spec)) %>% 
+  mutate(col = paste(city, spec)) 
+linear = split(linear, f = linear$col)
+# Create a data frame of the quadratic coefficients
+quadratic = tab %>% dplyr::filter(grepl("Quadratic", spec)) %>% 
+  mutate(col = paste(city, spec)) 
+quadratic = split(quadratic, f = quadratic$col)
+# Create the data-frame for the html table
+quadratic = matrixreg(lapply(lapply(quadratic, function(y) y = y),function(x) 
+    createTexreg(x$estimate, x$est,x$se, x$p,
+                 gof.names = c( rep("N.Obs", nrow(x)) ,rep("BIC", nrow(x))),
+                 gof = c(x$n, x$BIC),gof.decimal = c(rep(F, nrow(x)), rep(F, nrow(x))))),
+  booktabs = T, symbol = "+", digits = 3,stars = c(0.01, 0.05, 0.1)) %>% as.data.frame(.)
+# Transform the linear coefficients to a data frame
+linear = matrixreg(lapply(lapply(linear, function(y) y = y),function(x) 
+    createTexreg(x$estimate, x$est,x$se, x$p,
+                 gof.names = c( rep("N.Obs", nrow(x)) ,rep("BIC", nrow(x))),
+                 gof = c(x$n, x$BIC),gof.decimal = c(rep(F, nrow(x)), rep(T, nrow(x))))),
+  booktabs = T, symbol = "+", digits = 3,stars = c(0.01, 0.05, 0.1)) %>% as.data.frame(.)
+# Take away bad rows
+quadratic = quadratic[-1,]; linear = linear[-1,]
+# Add linear and quadratic coefficients
+tab = rbindlist(list(linear, quadratic))
+colnames(tab) = c("", rep(c("(1)", "(2)", "(3)"),2))
+# Create the HTML table of the first figure
+kbl(tab, align = "c") %>%
+  kable_classic() %>%
+  kable_styling(font_size = 14) %>%
+  add_header_above(c(" " = 1, "Mexico City" = 3, "New York" = 3)) %>%
+  kable_styling(bootstrap_option = c("hover")) %>%   
+  pack_rows("Linear Model", 1, 4) %>%
+  pack_rows("Quadratic Model", 5, 10) %>%
+  footnote(general = "$^{**}p<0.05$, $^*p<0.1$. This table shows the effect of the NowCast AQI on the number of crimes occurring in a two-kilometer radius around pollution measuring stations in Mexico City and New York. I report coefficients for three different specifications of weather covariates. (1) has not weather controls, (2) includes temperature, relative humidity, precipitation, and wind speed linearly, and (3) further adds the square value of temperature and precipitation. Point estimates come PMLE panel models with year-by-month-by-station, hour, and weekday fixed effects. Interpret coefficients as percentage changes in the number of crimes due to a ten units increase in the NowCast AQI--standard errors clustered at the station level.", footnote_as_chunk = T) %>%  scroll_box(height = "600px") 
+```
+
+## Table A2
+```{r}
+#| label: tbl-TableA2
+#| tbl-cap: Effects of air pollution on criminality across different clustering of standard errors
+#| tbl-cap-location: top
+#| echo: true
+# Set the path 
+file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
+# Load the data
+tab = read_rds(paste0(file, "02_GenData/04_results/AlternativeRobustSe.rds"))
+# Take the exponent of the point estimates 
+tab = tab %>% mutate_at(vars(est, se), function(x) x = (exp(x) -1)*100*10)
+# Create the data frame of linear coefficients
+linear = tab %>% dplyr::filter(grepl("Linear", spec)) %>% 
+  mutate(col = paste(city, spec)) 
+linear = split(linear, f = linear$col)
+# Create a data frame of the quadratic coefficients
+quadratic = tab %>% dplyr::filter(grepl("Quadratic", spec)) %>% 
+  mutate(col = paste(city, spec)) 
+quadratic = split(quadratic, f = quadratic$col)
+# Create the data-frame for the html table
+quadratic = matrixreg(lapply(lapply(quadratic, function(y) y = y),function(x) 
+    createTexreg(x$estimate, x$est,x$se, x$p,
+                 gof.names = c( rep("N.Obs", nrow(x)) ,rep("BIC", nrow(x))),
+                 gof = c(x$n, x$BIC),gof.decimal = c(rep(F, nrow(x)), rep(F, nrow(x))))),
+  booktabs = T, symbol = "+", digits = 3,stars = c(0.01, 0.05, 0.1)) %>% as.data.frame(.)
+# Transform the linear coefficients to a data frame
+linear = matrixreg(lapply(lapply(linear, function(y) y = y),function(x) 
+    createTexreg(x$estimate, x$est,x$se, x$p,
+                 gof.names = c( rep("N.Obs", nrow(x)) ,rep("BIC", nrow(x))),
+                 gof = c(x$n, x$BIC),gof.decimal = c(rep(F, nrow(x)), rep(T, nrow(x))))),
+  booktabs = T, symbol = "+", digits = 3,stars = c(0.01, 0.05, 0.1)) %>% as.data.frame(.)
+# Take away bad rows
+quadratic = quadratic[-1,]; linear = linear[-1,]
+# Add linear and quadratic coefficients
+tab = rbindlist(list(linear, quadratic))
+colnames(tab) = c("", rep(c("Station-by-month", "Station-by-Week", "Station-by-Date"),2))
+# Create the HTML table of the first figure
+kbl(tab, align = "c") %>%
+  kable_classic() %>%
+  kable_styling(font_size = 14) %>%
+  add_header_above(c(" " = 1, "Mexico City" = 3, "New York" = 3)) %>%
+  kable_styling(bootstrap_option = c("hover")) %>%   
+  pack_rows("Linear Model", 1, 4) %>%
+  pack_rows("Quadratic Model", 5, 10) %>%
+  footnote(general = "$^{**}p<0.05$, $^*p<0.1$. This table shows the effect of the NowCast AQI on the number of crimes occurring in a two-kilometer radius around pollution measuring stations in Mexico City and New York. Point estimates come from OLS and log-linear OLS panel models with weather controls and year-by-month-by-station, hour, and weekday fixed effects. Interpret coefficients in the OLS model as the marginal effect of increasing each particle by one hundred units and in the log-linear design as percentage changes in the number of crimes due to a ten units increase in the NowcAST aqi--standard errors clustered at the station level.", footnote_as_chunk = T) %>%  scroll_box(height = "600px") 
+```
+## Figure A3
+```{r}
+#| label: fig-FigureA3
+#| fig-cap: Box plots of raw and IV-fitted values of the NowCast AQI
+#| fig-cap-location: top
+#| echo: true
+#| fig-width: 7
+#| fig-height: 3.5
+# Set the path 
+file = paste0(gsub("NonLinearCrime/","", getwd()), "/ReplicationFolder/")
+# Load the data set
+data = read_rds(paste0(file, "02_GenData/03_RegData/DataReg.rds"))
+# Split the data
+data = split(data, f = data$city)
+#### Only keep the variables relevant for the regression design ####
+data = lapply(data, function(x) 
+  select(x, date, total, NowCast, wsp, rh, rh_ntile, wdr8,
+         station, year, month, hour, weekday, temp_ntile, rain_ntile))
+# Run the first stage estimates of the NowCast as a function of wind direction
+est = lapply(data, function(x) 
+  fepois(NowCast ~ wsp + rh | station^year^month + hour^station + weekday +
+           temp_ntile + rain_ntile + rh_ntile^temp_ntile + wdr8^station, data = x))
+# Extract the fitted values of the NowCast index
+predict = lapply(est, function(x) data.frame(NowCastIv = fitted.values(x, na.rm = F)))
+# Add the fitted AQI to the original data
+data$cdmx = cbind(data$cdmx, predict$cdmx)
+data$nyc = cbind(data$nyc, predict$nyc); rm(predict)
+# Plot the box-plotm
+plot = select(rbindlist(data, idcol = "city"), station, date, hour, city, NowCast, NowCastIv)
+# Transform to long format
+plot = gather(plot, variable, value, -c(station:city))
+# Restrict to the first and 99th percentile of the distribution
+plot = ungroup(plot) %>% group_by(city, variable) %>% 
+  filter(value < quantile(value, 0.99, na.rm = T), 
+         value > quantile(value, 0.01, na.rm = T))
+# Change the name of the cities
+plot = mutate(plot, city = ifelse(city == "nyc", "New York City", "Mexico City"), 
+              variable = ifelse(variable == "NowCast", "Raw AQI", "Instrumented AQI"))
+# Construct the ggplot
+ggplot(plot)  + geom_boxplot(aes(x = variable, y = value, fill = variable), outlier.shape = NA) +
+  theme(panel.background = element_rect(fill = "transparent"),
+        strip.background = element_rect(fill = "transparent"),
+        strip.text = element_text(hjust = 0), axis.line = element_line(), 
+        legend.position = "bottom", legend.title = element_blank())  +
+  grids(color = "gray80") + labs(x = "", y = "") + guides(fill = FALSE) +
+  facet_wrap(~city, scales = "free") + 
+  scale_fill_manual(values = c("antiquewhite", "darkorange"))
+```
+Notes: *Box plots of raw and IV-fitted air pollution values. The box lines represent the median, 10th, and 90th percentile, while the Whiskers upper and lower limits are the 1st and 99th percentiles of the distribution.*
+
 :::

@@ -9,6 +9,7 @@ library(sf)
 # HTML tables
 library(kableExtra)
 library(knitr)
+library(vtable)
 # Load data
 library(readr)
 # Dates
@@ -18,6 +19,9 @@ library(texreg)
 library(mgsub)
 # plots
 library(tmap)
+library(ggpubr)
+# Regression
+library(fixest)
 #### Solve conflicts ####
 conflict_prefer("filter", "dplyr")
 conflict_prefer("month", "lubridate")

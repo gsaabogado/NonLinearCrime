@@ -1,13 +1,16 @@
 ---
-title: ""
-description: |
-  This website contains all the data and R-code necessary to replicate the results of the study: \\ The Nonlinear Relationship Between Pollution and Crime: Evidence from Mexico City and New York forthcomming in Environmental Resarch - Health.
+title: "About"
 author: "Luis Sarmiento"
 institute: "RFF-CMCC: European Institute on Economics and the Environment"
-date: "`r format(Sys.time(), '%d %B, %Y')`" 
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+format: 
+  html: 
+    toc: true
+    warning: false
+    code-fold: true
+    code-summary: "Show the Code"
 ---
 
-## Introduction
 
 This research report contains three primary sections to accompany the study on the relationship between air pollution exposure and criminal behaviour in Mexico City and New York.
 
@@ -23,15 +26,19 @@ This research report contains three primary sections to accompany the study on t
 -   Regression Data
 :::
 
-3.  **Study Exhibits** -- Includes the R code and data necessary to replicate all the figures and tables in the study
+3.  **Study Exhibits** -- Includes the R code and data necessary to replicate all the figures and tables in the study. It is divided into four subsections.
+
+- Theoretical background
+- Data
+- Results
+- Robustness
+- Appendix
 
 ## Replication
 
 All the raw files needed to run the code are in the [dropbox repository](https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0)
 
-If you want to replicate the study:
-
-Download all files in the [dropbox repository](https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0) while considering the space constraints in your computer.[^1] 
+If you want to replicate the study, download all files in the [dropbox repository](https://www.dropbox.com/sh/9oyfzolf4rz42s6/AABbCWzqnDNQckt60qpniEuMa?dl=0) while considering the space constraints in your computer.[^1] 
 
 The files in the repository have a folder-like structure with the following key sections:
 
@@ -39,23 +46,23 @@ The files in the repository have a folder-like structure with the following key 
 
 -   **01_RawData** -- Includes the raw data files divided into four main folders
 
-    -   *01_crimes* - It is the repository with all the raw data on criminality for Mexico City and New York. It contains two sub-directories. *01_nyc* has all the crime data of New York City (in CSV and Excel formats) and *03_cdmx* has the analogous data from Mexico divided into two different CSV files (one between 2012 and 2015 and the other between 2016 and 2019).
+    -   *01_crimes* -It is the repository with all the raw data on criminality for Mexico City and New York. It contains two sub-directories. *01_nyc* has all the crime data forNew York City (in CSV and Excel formats), and *03_cdmx* has comparable data from Mexico City. *03_cdmx* is further divided into two different CSV files (one between 2012 and 2015 and the other between 2016 and 2019).
 
 
-    -   *02_pollution* - Repository with all the air pollution data for New York and Mexico City. It contains two sub-directories. *01_epa* contains the air pollution data from the network of monitoring stations maintained by the US Environmental Protection Agency. This folder contains two additional folders, *02_daily* contains zipped daily measurement files for each air pollutant and year between 2000 and 2019 for the entire USA and *02_StateData* has a zipped file of hourly air pollution for each US state. Next, *03_cdmx* contains the air pollution data for Mexico City across three repositories; *01_pol* has a set of csv files with hourly air pollution data. *02_weather* has a similar structure for weather controls. And *03_other* contains a folder with the geographical location of measuring staions
+    -   *02_pollution* - Repository with all the air pollution data for New York and Mexico City. It contains two sub-directories. *01_epa* contains the air pollution data from the network of monitoring stations maintained by the US Environmental Protection Agency. This folder contains two additional folders;* 02_daily* contains zipped daily measurements of air pollution between 2000 and 2019 for the entire USA, and *02_StateData* contains zipped files of hourly air pollution across American states. Next, *03_cdmx* contains the air pollution data for Mexico City across three repositories; *01_pol* has a set of CSV files with hourly air pollution data. *02_weather* has a similar structure for weather controls. And *03_other* contains a folder with the geographical location of measuring stations.
 
-    -   03_shapefiles -- Folder with all the shape (spatial) files I use throughout the study. One for the boroughs in New York City and another one for the Mexican States
+    -   03_shapefiles -- Folder with all the shape (spatial) files I use throughout the study. One for the boroughs in New York City and another one for the Mexican States.
 
     -   04_weather - Folder with the weather data for New York City
 
--   **02_GenData** -- Contains the set of data.frames I use for the estimation of point estimates. Each data comes from the scientific manipulation of the raw files in the *01_RawFiles* repository.
+-   **02_GenData** -- Contains the set of data frames I use for the estimation of point estimates. Each data-file comes from the scientific manipulation of the raw data in the *01_RawFiles* repository. I divide the repository into four folders:
 
     -   01_crime: the folder contains three main files: 
         -  CrimesCdmx.rds: Crime data for Mexico City
         -  CrimesNYC.rds: Crime data for New York City
         -  crimes.rds: Crime data for Mexico City and New York
 
-    -   02_pol: The folder contain N main files
+    -   02_pol: The folder contain 6 files
 
         -   PolCdmx.rds: Air pollution data for Mexico City
 
@@ -75,18 +82,18 @@ The files in the repository have a folder-like structure with the following key 
 
     -   03_RegData: Contains the files I use in the econometric analysis
     
-        - DataReg: It is the main file I use for the empirical analysis
+        - DataReg: It is the main file
         - DataRobustness: Additional data for robustness exercises
         
-    -   04_results: Contains all the results from the econometric specifications. Each result comes from the file 03_scripts/04_reg
+    -   04_results: Contains all the results from the econometric specifications. Each result comes from the file **03_scripts/04_reg.R** script.
 
 -   **03_scripts** -- Here, I include all the R-scripts I use to transform the raw data into a useful format, perform descriptive statistics, and run my empirical specifications. I divide the scripts into tasks, particularly:
 
-    -   01_crimes -- It transforms and cleans the raw crime data into the format necessary to use in the empirical design
+    -   01_crimes -- Transforms and cleans the raw crime data into the format necessary to use in the empirical design
 
-    -   02_pol -- It transforms and cleans the air pollution and weather variables I use throughout the analysis
+    -   02_pol -- Transforms and cleans the air pollution and weather variables
 
-    -   03_RegData -- It merges the crime and air pollution data according to the specifications of the stury
+    -   03_RegData -- Merges the crime and air pollution data according to the specifications of the stury
 
     -   04_reg - Contains all the econometric analysis
 
@@ -94,4 +101,4 @@ The files in the repository have a folder-like structure with the following key 
 
     -   06_plot - Generates (one by one) all of the figures in the study
 
-    -   99_robustness -- Includes all robustness exercises I include in the study
+    -   99_robustness -- Includes all robustness exercises

@@ -8,6 +8,7 @@ project:
 
 website:
   title: "The Nonlinear Relationship Between Pollution and Crime"
+  reader-mode: true
   navbar:
     search: true
     pinned: true
@@ -33,7 +34,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
 
 
